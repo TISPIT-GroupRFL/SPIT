@@ -1,0 +1,114 @@
+\begin{vdm_al}
+types 
+
+Key = token;
+Room = token;
+Guest = token;
+
+Card :: fst : Key --first key, holds key 
+        snd : Key; --second key, holds new key
+
+Desk :: issued : set of Key
+        prev   : map Room to Key
+inv d == rng d.prev subset d.issued; --previous keys must be a subset of all issued keys
+
+state Hotel of 
+        desk   : Desk
+        locks  : map Room to Key
+        guests : map Guest to set of Card
+
+inv h == dom h.desk.prev subset dom h.locks and --set of rooms with a previous key must be a subset of all rooms with a lock
+         dunion {{c.fst, c.snd} | c in set dunion rng h.guests} --create set of all guest keys
+         subset h.desk.issued --that set must be a subset of issued keys.
+
+init h == mk_Hotel(mk_Desk({},{|->}),{|->},{|->})
+
+end
+
+operations
+
+CheckIn(g:Guest,r:Room)
+
+ext wr desk   : Desk
+    wr guests : map Guest to set of Card
+
+pre r in set dom desk.prev
+-- The room should be one that is previously rented out
+
+post exists new_k:Key &
+	new_k not in set desk~.issued            and
+	-- the key should not be issued to another guest, this seems wierd, should it not pre?
+ 	let new_c = mk_Card(desk~.prev(r),new_k)
+        in
+	desk.issued = desk~.issued union {new_k} and
+	-- a key for a checked in user should be marked as issued in the system
+	desk.prev = desk~.prev ++ {r |-> new_k}  and
+	-- what happens here?
+	if g in set dom guests~
+	then guests = guests~ ++ {g |-> guests~(g) union {new_c}}
+    else guests = guests~ munion {g |-> {new_c}};
+
+
+Enter(r:Room,g:Guest) --hest
+
+ext wr locks  : map Room to Key
+    rd guests : map Guest to set of Card
+
+pre r in set dom locks  and 
+    g in set dom guests and
+    exists c in set guests(g) & c.fst=locks(r) or c.snd=locks(r) 
+
+post exists c in set guests(g) & 
+	c.fst = locks(r) and locks = locks~ ++ {r |-> c.snd} or
+	c.snd = locks(r) and locks = locks~;
+
+CheckInExpl: Guest * Room ==> ()
+CheckInExpl(g,r) ==
+  let new_k:Key be st new_k not in set desk.issued  --let be such that: new key cannot be issued already
+  in 
+    let new_c = mk_Card(desk.prev(r),new_k) -- new card = first key is previous key used for that room, second is new key
+    in
+      (desk.issued := desk.issued union {new_k};  --new key is added to set of issued keys
+       desk.prev   := desk.prev ++ {r |-> new_k}; --entry, room to new key, is added/overwritten to the desk's prev map 
+       guests      := if g in set dom guests      --is the guest already a guest?
+	                  then guests ++ {g |-> guests(g) union {new_c}} --yes -> add card to the guests' set of cards
+                      else guests munion {g |-> {new_c}} --no, add guest to set with new card entry to map.
+      )
+pre r in set dom desk.prev; --room must have a previous key
+
+--
+-- Explicit versions of operations for execution on the interpreter
+--
+
+EnterExpl: Room * Guest ==> ()
+EnterExpl(r,g) ==
+  let c in set guests(g) be st c.fst = locks(r) or c.snd = locks(r)
+  in
+    if c.fst = locks(r)
+    then locks := locks ++ {r |-> c.snd}
+pre r in set dom locks  and 
+    g in set dom guests and
+    exists c in set guests(g) & c.fst=locks(r) or c.snd=locks(r); 
+
+IssueCard: () ==> Key
+IssueCard() ==
+  let k: Key be st k not in set desk.issued --let be such that: new key cannot be issued already
+  in
+    (desk.issued := desk.issued union {k}; --add key to set of issued keys
+     return k
+    );
+
+AddRoom: Room * Key ==> ()
+AddRoom(r,k) ==
+  (desk.prev := desk.prev munion {r |-> k}; --add room to key mapping to previous map
+   locks := locks munion {r |-> k} --add room to key mapping to locks map
+  )
+pre k in set desk.issued and r not in set dom locks; --key must be issued, the room must not be in locks map
+
+AddGuest: Guest * set of Card ==> ()
+AddGuest(g,cs) ==
+  guests := guests ++ {g |-> if g in set dom guests --if guest is already a guest
+                             then guests(g) union cs --add new card set to the guests current card set
+                             else cs} --else: set new card set as the guest's current card set
+pre forall c in set cs & {c.fst, c.snd} subset desk.issued; --keys of all cards in the card set must be issued already.
+\end{vdm_al}

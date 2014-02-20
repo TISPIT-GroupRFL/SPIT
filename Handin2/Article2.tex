@@ -1,0 +1,27 @@
+\documentclass[Main]{subfiles}
+
+\begin{document}
+
+\section{Specifying Software Requirements for Complex Systems: \\
+New Techniques and Their Application \cite{Specifying}}
+%PoV		
+This article is written by a team of researchers, after going through the process of specifying the requirements for the flight software of Navy's A-7, and in the process creating new techniques for requirement specifications.
+%purpose
+The purpose of this article is to introduce techniques to create requirement specifications that are "precise, concise, unambiguous and easy to check for completeness and consistency"\cite{Specifying}. The techniques were developed for the flight software of Navy's A-7. 
+%question
+To do this the article seeks to explore how software can be described in a concise fashion, and whether or not such a description will serve to make the software easier to understand, change and maintain. The author believes that, other methods of requirements specification have not been adopted by the industry, because they haven't been shown to work in real-world projects. This issue is addressed in the article. 
+%6. Main assumptions
+\\ %information
+The article describes the process for specifying the requirements of a system. In doing so, the author describes the associated forms and tables, thus supporting the claim, that the requirement specifications meets the criteria outlined in the start of this section. To further this claim, the author makes the entire, fully-worked A-7 specification requirement document available.
+\\%concepts
+The techniques outlined in the report rely on a few key concepts, that aids in the formal specifications of the requirements. Most importantly are "functions", which in the context of the article describes the behavior of the system in terms of externally visible effects. An output may only be controlled by a single function. The techniques described rely on notations covering among others: inputs, outputs, non-numeric values, events and macros. Macros may define quantities or conditions derived from input, and may be defined in terms of other macros.
+\\
+%Main inferences/conclusions
+The article concludes that following a well-defined set of techniques systematically allows a project group to concisely write requirements specifications. Specifying constraints, inputs and in particular outputs in error events using symbolic names allows the requirements to specify the behavior of the system, without specifying implementation details. 
+%7. Implications (following the author/not following the author)
+The implication of this conclusion is that all complex systems can be concisely and unambiguously described by the methods outlined in the article. The documents described in this article can be used to document and implement complex systems. Describing systems as described in this article betters the overview of the system, and greatly helps eliminating inconsistencies.
+		
+The example system described in the article have inputs and outputs, each of which with a very limited and specific functionality. The techniques described in the article fits well with this kind of system, however not all systems fall into this category, and it is not shown how the techniques may be applied to a system featuring fewer, multi-purpose inputs/outputs.
+
+
+\end{document}
