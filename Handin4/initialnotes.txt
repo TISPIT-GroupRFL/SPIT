@@ -1,0 +1,30 @@
+Lecturer tasks:
+ - Manage students
+   - add students - possible solution: import from CN group + manually
+   - remove students
+
+ - Add excersize
+   - add excercise + description, deadline, deadline for resubmission, max number of group members
+   - Assign reviewers (number of reviewers could be arbitrary) (something about repetition)
+     - Current problem: doing this by hand is cumbersome
+     
+ - Update excercise (preconditions?)
+   
+ - Assess submission + review status
+   - provide overview - suggestion for solution: filter on status
+     - current problem: students send reviews as email to lecturer - time consuming to keep track of.
+   - read reviews and submissions (both original and resubmissions)
+  
+Student tasks:
+ - Submit handin (+ resubmit)
+   - submit handin
+   - distribute handin to reviewers
+ 
+ - Submit review
+   - submit commented version of handin, comments, okay/not okay
+   - send review to reviewee
+   - add review to lecturer's overview
+   
+Questions for Joey: 
+ - Should groups be formed in advance of handing in?
+ - What does "Ensuring that repetition of assignments of a given student to a (set of) peer(s) is minimised" mean?
