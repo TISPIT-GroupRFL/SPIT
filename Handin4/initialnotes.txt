@@ -37,3 +37,5 @@ Questions for Joey:
  - Should groups be formed in advance of handing in? - when should reviewers be assigned? groups??
  - What does "Ensuring that repetition of assignments of a given student to a (set of) peer(s) is minimised" mean?
  - special cases for bending deadlines?
+ - what should happen when submitting past deadlines? 
+ - Update excercise (preconditions? what if there are submissions already?)
