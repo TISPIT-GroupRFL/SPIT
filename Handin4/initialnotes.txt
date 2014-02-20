@@ -4,11 +4,11 @@ Lecturer tasks:
    - remove students
 
  - Add excersize
-   - add excercise + description, deadline, deadline for resubmission, max number of group members
-   - Assign reviewers (number of reviewers could be arbitrary) (something about repetition)
-     - Current problem: doing this by hand is cumbersome
+   - add excercise + description, deadline, deadline for resubmission, max number of group members, number of reviewers
      
- - Update excercise (preconditions?)
+ - Update excercise (preconditions? what if there are submissions already?)
+   - change parameters given when excercise was added.
+   - send notification to students
    
  - Assess submission + review status
    - provide overview - suggestion for solution: filter on status
@@ -16,15 +16,24 @@ Lecturer tasks:
    - read reviews and submissions (both original and resubmissions)
   
 Student tasks:
- - Submit handin (+ resubmit)
+ - Submit handin
    - submit handin
-   - distribute handin to reviewers
+    
+   - variants: update submission, resubmission, past deadline
  
  - Submit review
    - submit commented version of handin, comments, okay/not okay
    - send review to reviewee
    - add review to lecturer's overview
+   - variants: past deadline
+   
+Events:
+ - deadline for submission
+   - Assign reviewers (minimal repetition, reviewers cannot be in your group, reviewers should not be assigned to multiple members of the same group)
+     - Current problem: doing this by hand is cumbersome 
+   - distribute handin to reviewers
    
 Questions for Joey: 
- - Should groups be formed in advance of handing in?
+ - Should groups be formed in advance of handing in? - when should reviewers be assigned? groups??
  - What does "Ensuring that repetition of assignments of a given student to a (set of) peer(s) is minimised" mean?
+ - special cases for bending deadlines?
