@@ -1,31 +1,63 @@
 Lecturer tasks:
  - Manage students
-   - add students - possible solution: import from CN group + manually
+   - add students - possible solution: import from CN group + manually (stads) 
    - remove students
+   
+ - manage groups
+   - pull students out of group
+   - add student to group
+   - create group
+   - delete group
+   
+ - exclude student from review list
+   
+ - manually override submission status for groups:
 
  - Add excersize
    - add excercise + description, deadline, deadline for resubmission, max number of group members, number of reviewers
+   - variant: no review
+   
+   deadlines:
+   initial submission
+   review 
+   resubmission
      
  - Update excercise (preconditions? what if there are submissions already?)
    - change parameters given when excercise was added.
    - send notification to students
    
+   - nice to have: versioning
+   
  - Assess submission + review status
    - provide overview - suggestion for solution: filter on status
      - current problem: students send reviews as email to lecturer - time consuming to keep track of.
    - read reviews and submissions (both original and resubmissions)
+   - see track record for group / student
+   
+   - also as student: here are those you need to review, released on deadline
+   
+   review assignments on deadline. 
+   
+   
+ - freeze reviews / submission
   
 Student tasks:
  - Submit handin
    - submit handin
     
-   - variants: update submission, resubmission, past deadline
+   - variants: update submission, resubmission, past deadline, not final submission
  
  - Submit review
    - submit commented version of handin, comments, okay/not okay
-   - send review to reviewee
+   - send review to reviewee (reviewee's option)
    - add review to lecturer's overview
-   - variants: past deadline
+   - variants: past deadline, update review (reupload).
+   
+ - Create group
+  - add peers
+  - require peers accept
+   
+   
    
 Events:
  - deadline for submission
@@ -35,7 +67,18 @@ Events:
    
 Questions for Joey: 
  - Should groups be formed in advance of handing in? - when should reviewers be assigned? groups??
+  - groups are mostly fixed, but live, 
+  groups -> review assignments
+  
+ 
+ 
  - What does "Ensuring that repetition of assignments of a given student to a (set of) peer(s) is minimised" mean?
  - special cases for bending deadlines?
  - what should happen when submitting past deadlines? 
  - Update excercise (preconditions? what if there are submissions already?)
+ 
+ - deadlines: 
+   - possible to upload past deadline, just flag as late
+   
+ - dealing with duplication of review assignments should be possible
+ - generall
