@@ -7,12 +7,20 @@ The system must support all user tasks in this chapter, including all subtasks a
 \section{Work area: Student management}
 This work area comprises adding and removing students from the system.
 
-\begin{tabular}{l l}
- \textbf{User profile:} & \textbf{Lecturer.} All lecturer are experienced IT users. \\
- \textbf{Environment:} & Office.
+\begin{tabular}{l  p{13cm}}
+ \textbf{User profile:} & \textbf{Lecturer.} All lecturers are experienced IT users and have administrative rights to the system. \\
+ \textbf{User profile:} & \textbf{Student.} All students are experienced IT users and use the system to form groups.  \\
+ \textbf{Environment:} & Office or similar.
 \end{tabular}
 
-\subsection{Student management}
+\subsection{Manage students}
+
+\begin{longtable}{l p{13cm}}
+ \textbf{Start:} & On course start, when forming/modifying groups, when students go inactive. \\
+ \textbf{End:} & When the students are correctly recorded, and groups are as desired.  \\
+ \textbf{Frequency:} & Only needed on course start, and a few times during the first week, unless many students drop out during the course. About 30-50 students per course. \\
+ \textbf{Users:} & Lecturers \\
+\end{longtable}
 
 \begin{itemize}
 \item add students - possible solution: import from CN group + manually (stads) 
@@ -22,29 +30,99 @@ This work area comprises adding and removing students from the system.
 \item create group
 \item delete group
 \item exclude student from review list
+\item freeze groups
 \end{itemize}
 
-\section{Work area: Exercise management}
+\subsection{Form groups}
+
+\begin{longtable}{l p{13cm}}
+ \textbf{Start:} & On course start, when not in a group, or when adding group members. \\
+ \textbf{End:} & When the the groups are as desired.  \\
+ \textbf{Frequency:} & Performed at least once by all students, but seldom more than once. \\
+ \textbf{Users:} & Students \\
+\end{longtable}
+
+\begin{itemize}
+\item Form a group
+\item Invite other students to the group.
+\item Send out invite notice
+\item Join a group
+\end{itemize}
+
+\section{Work area: Submission management}
 This work area comprises of adding exercises, updating exercises, assessing and possibly overriding submission and review status for groups.
 
-\begin{tabular}{l l}
- \textbf{User profile:} & \textbf{Lecturer.} All lecturer are experienced IT users. \\
- \textbf{Environment:} & Office.
+\begin{tabular}{l  p{13cm}}
+ \textbf{User profile:} & \textbf{Lecturer.} All lecturers are experienced IT users and have administrative rights to the system. \\
+ \textbf{User profile:} & \textbf{Student.} All students are experienced IT users and use the system to submit handins and reviews, and monitor their own status.  \\
+ \textbf{Environment:} & Office or similar.
 \end{tabular}
 
 \subsection{Manage exercise}
 
+\begin{longtable}{l p{13cm}}
+ \textbf{Start:} & When exercises needs to be inspected, added, updated or removed. \\
+ \textbf{End:} & When the exercise(s) have been inspected, added, updated or removed.  \\
+ \textbf{Frequency:} & About one exercise added weekly. Other variants are rare. \\
+ \textbf{Users:} & Lecturers \\
+\end{longtable}
+
 \begin{itemize}
+\item Inspect exercise
 \item Add exercise (variant: update)
 \item Record description, deadlines (initial, review, resubmission), number of reviewers, timestamp
+\item Remove exercise
 \item Notify students
+\item freeze reviews / submission
 \item Nice to have: versioning
 \end{itemize}
 
-\subsection{Asses submission and review status}
+\subsection{Manage submission and review status}
+
+\begin{longtable}{l p{13cm}}
+ \textbf{Start:} & When status and/or submissions of the groups needs to be assessed or altered. \\
+ \textbf{End:} & When the When status and/or submissions have been managed.  \\
+ \textbf{Frequency:} & Several times a day, depending on the exercise schedule. \\
+ \textbf{Users:} & Lecturers \\
+\end{longtable}
 
 \begin{itemize}
-\item 
+\item Assess submission + review status for groups
+	\begin{itemize}
+	\item \textbf{Current problem:} students send reviews as email to lecturer - time consuming to keep track of.
+	\item \textbf{Possible solution:} The system provides an overview, showing all groups, and status (submission ,feedback and review) for each exercise. Filter  
+	\end{itemize}
+\item Read feedback, reviews and submissions, including older versions
+\item Override group status
 \end{itemize}
+
+\subsection{Submit handin}
+
+\begin{longtable}{l p{13cm}}
+ \textbf{Start:} & When the group has finished a handin for an exercise. \\
+ \textbf{End:} & When the handin has been submitted.  \\
+ \textbf{Frequency:} & Atleast once per group per exercise. Depends on the frequency of the exercises. \\
+ \textbf{Users:} & Students \\
+\end{longtable}
+
+\begin{itemize}
+\item Submit handin file
+\item Record comment and timestamp
+\end{itemize}
+
+\subsection{Submit review}
+
+\begin{longtable}{l p{13cm}}
+ \textbf{Start:} & When the student has finished a review for an assigned handin. \\
+ \textbf{End:} & When the review has been submitted.  \\
+ \textbf{Frequency:} & Depends on the number of reviewers for each exercise, and frequency of exercises. \\
+ \textbf{Users:} & Students \\
+\end{longtable}
+
+\begin{itemize}
+\item Submit review file(s)
+\item Record comment, assessment(okay/not okay), and timestamp
+\end{itemize}
+
 
 \end{document}

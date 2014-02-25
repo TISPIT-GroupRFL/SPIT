@@ -11,7 +11,7 @@ Lecturer tasks:
    
  - exclude student from review list
    
- - manually override submission status for groups:
+
 
  - Add excersize
    - add excercise + description, deadline, deadline for resubmission, max number of group members, number of reviewers
@@ -33,8 +33,9 @@ Lecturer tasks:
      - current problem: students send reviews as email to lecturer - time consuming to keep track of.
    - read reviews and submissions (both original and resubmissions)
    - see track record for group / student
-   
+   - manually override submission status for groups:   
    - also as student: here are those you need to review, released on deadline
+	
    
    review assignments on deadline. 
    
@@ -72,10 +73,9 @@ Questions for Joey:
   
  
  
- - What does "Ensuring that repetition of assignments of a given student to a (set of) peer(s) is minimised" mean?
- - special cases for bending deadlines?
- - what should happen when submitting past deadlines? 
- - Update excercise (preconditions? what if there are submissions already?)
+ - special cases for bending deadlines? timestamp + flag
+ - what should happen when submitting past deadlines? timestamp + flag 
+ - Update excercise (preconditions? what if there are submissions already?) timestamp + notice
  
  - deadlines: 
    - possible to upload past deadline, just flag as late
