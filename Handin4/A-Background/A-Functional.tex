@@ -3,4 +3,61 @@
 
 \subsection{Functional requirements}
 
+Functional requirements may be tasks to support, data to store, systems to integrate, etc. 
+Here is a fictitious example without relation to the present delivery. 
+The functional requirement is that the system must support a number of tasks, including Section \ref{sec:ManageStudents}, and preferably eliminate the current problems.
+
+
+\fxnote{Insert example here when available}
+
+The table lists the subtasks and problems of task C5. 
+There is thus a requirement to support each of the table lines to some extent. 
+The data about Start, End and Frequency are not in the table, meaning that they are not requirements.
+
+The requirement lines are numbered. 
+Variants of a requirement line are marked with letters a, b, etc. 
+In the example, the supporter may record the request (subtask 2) or find the request if it has been recorded already (variant 2a). 
+Problems relating to a requirement line are marked with the letters p, q, etc. 
+A cross reference to a subtask, a variant, or a problem will look like this:
+	\textit{See C5-2 or See problem C5-2p}\fxnote{Correct this}.
+\\
+\\
+\textbf{Requirement}. 
+Column 1 of a table specifies the customer's demand, e.g. a subtask the system must support, or a problem it should eliminate. 
+\\
+\\
+\textbf{Solution}. 
+Column 2 specifies the system's support. 
+The column may show the customer's current imagination of a solution -- if he has one. 
+This is not a requirement or a wish, but only a possible solution to help the supplier understand the demand. 
+In many cases the field will be empty. 
+In the reply, the supplier will fill in the solution he proposes .
+\\
+\\
+\textbf{Code}. 
+Column 3 may be used in different ways depending on the nature of the project. 
+The customer may use it for requirement priorities before sending the request for proposal, or give a score for the supplier's solution when he assesses it. 
+Another possibility is that the supplier has to fill in column 3 with a code that specifies the delivery.
+\\
+\\
+\textbf{Text outside tables}
+In the example, Start, End, Frequency, and Users are outside the table. 
+They are not requirements, but assumptions the supplier can make. 
+In general, text outside the tables can serve several purposes:
+
+\begin{enumerate}[A]
+\item \textbf{Assumptions} behind the requirements, for instance that the task must be supported for this kind of users, this frequency of use, etc.
+
+\item \textbf{Requirement notes} that elaborate column 1 in the table. 
+In principle they should be inside the table, but they don't fit well. 
+One example is a list of access rights to the system.
+
+\item \textbf{Solution notes} that elaborate column 2 in the tables. 
+They are not requirements but example solutions. 
+One example is various ways a user can look up a code in a table.
+
+\item \textbf{Examples} and other information to help the reader understand the requirements.
+\end{enumerate}
+
+
 \end{document}
