@@ -12,6 +12,11 @@
 \newcommand{\rSource}[1]{\\ \textbf{Data source:} & \parbox[t]{\rDescription}{#1}}
 \newcommand{\rUse}[1]{\\ \textbf{Data use:} & \parbox[t]{\rDescription}{#1}}
 
+\newcommand{\tStart}[1]{\textbf{Start:} & \parbox[t]{\rDescription}{#1}}
+\newcommand{\tEnd}[1]{\\\textbf{End:} & \parbox[t]{\rDescription}{#1}}
+\newcommand{\tFreq}[1]{\\ \textbf{Frequency:} & \parbox[t]{\rDescription}{#1}}
+\newcommand{\tUsers}[1]{\\ \textbf{Users:} & \parbox[t]{\rDescription}{#1}}
+
 \newenvironment{DataIntro}
 {\begin{longtable}{p{\rLabel} p{\rDescription}}}
 {\end{longtable}}
@@ -30,17 +35,45 @@
 %{Aktion to take}
 %{Expectation}
 %{Code}
+%\RecordAddi
+%{Marker}
+%{Aktion to take}
+%{Expectation}
+%{Code}
 %\end{DataTable}
 %--------------------------------------------------
-\newcommand{\TCfirst}{0.05 \textwidth}
-\newcommand{\TCsecond}{0.38 \textwidth}
-\newcommand{\TCthird}{0.38 \textwidth}
+\newcommand{\TCfirst}{0.02 \textwidth}
+\newcommand{\TCsecond}{0.40 \textwidth}
+\newcommand{\TCthird}{0.39 \textwidth}
 \newcommand{\TCfourth}{0.08 \textwidth}
 
 \newenvironment{DataTable}
 {\begin{longtable}{ p{\TCfirst}  p{\TCsecond} p{\TCthird} p{\TCfourth} }
-\hline \textbf{Step} & \textbf{Fields and relationships} & \textbf{Example solution} & \textbf{Code} \\ \hline}
+\hline \multicolumn{2}{l}{\textbf{Fields and relationships}} & \textbf{Example solution} & \textbf{Code} \\ \hline}
 {\hline \end{longtable}
 \setcounter{ctStep}{0}}
 
 \newcommand{\Record}[3]{\parbox[t]{\TCfirst}{\step} &\parbox[t]{\TCsecond}{#1} &\parbox[t]{\TCthird}{#2}& \parbox[t]{\TCfourth}{#3} \\}
+
+\newcommand{\RecordAddi}[4]{\parbox[t]{\TCfirst}{\arabic{ctStep}#1} &\parbox[t]{\TCsecond}{#2} &\parbox[t]{\TCthird}{#3}& \parbox[t]{\TCfourth}{#4} \\}
+
+
+%--------------------------------------------------
+%\begin{DataTable}
+%\Record
+%{Task}
+%{Solution}
+%{Code}
+
+%\RecordProblem
+%{Problem}
+%{}
+%{Solution}
+%{Code}
+%\end{TaskTable}
+%--------------------------------------------------
+\newenvironment{TaskTable}
+{\begin{longtable}{ p{\TCfirst}  p{\TCsecond} p{\TCthird} p{\TCfourth} }
+\hline \multicolumn{2}{l}{\textbf{Subtask and variant}} & \textbf{Proposed solution} & \textbf{Code} \\ \hline}
+{\hline \end{longtable}
+\setcounter{ctStep}{0}}
