@@ -29,6 +29,7 @@ Lecturer tasks:
    - nice to have: versioning
    
  - Assess submission + review status
+
    - provide overview - suggestion for solution: filter on status
      - current problem: students send reviews as email to lecturer - time consuming to keep track of.
    - read reviews and submissions (both original and resubmissions)
@@ -68,10 +69,7 @@ Events:
    
 Questions for Joey: 
  - Should groups be formed in advance of handing in? - when should reviewers be assigned? groups??
-  - groups are mostly fixed, but live, 
-  groups -> review assignments
-  
- 
+  - groups are mostly fixed, but live, groups -> review assignments
  
  - special cases for bending deadlines? timestamp + flag
  - what should happen when submitting past deadlines? timestamp + flag 
@@ -82,3 +80,5 @@ Questions for Joey:
    
  - dealing with duplication of review assignments should be possible
  - generall
+
+ - reviews on deadline
