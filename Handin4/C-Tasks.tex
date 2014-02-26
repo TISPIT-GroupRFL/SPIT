@@ -48,7 +48,7 @@ This work area comprises adding and removing students from the system.
 {Exclude student from review list.}{}{}
 \RecordAddi
 {p}
-{\textbf{Problem:} Currently inactive students may be assigned reviews.}{}{}
+{\textbf{Problem:} Inactive students may be assigned reviews.}{}{}
 
 \Record
 {Freeze student groups, preventing students from modifying the groups.}{}{}
@@ -89,8 +89,8 @@ This work area comprises of adding exercises, updating exercises, assessing and 
 \end{DataIntro}
 
 \begin{TaskTable}
-\Record{Inspect exercise.}{Nice to have: versioning}{}
-\Record{Add exercise and record associated data as defined in \fxnote{ref til D-exercise}.}{Nice to have: versioning}{}
+\Record{Inspect exercise.}{}{}
+\Record{Add exercise and record associated data as defined in \fxnote{ref til D-exercise}.}{}{}
 \RecordAddi
 {a}
 {This exercise has been added: update exercise and record updated associated data as defined in \fxnote{ref til D-exercise}. }{Nice to have: versioning}{}
@@ -100,7 +100,7 @@ This work area comprises of adding exercises, updating exercises, assessing and 
 \Record{Disable submission of handins and reviews.}{}{}
 \end{TaskTable}
 
-\subsection{Manage submission status}\label{sec:ManageSubmissions}
+\subsection{Manage group submission status}\label{sec:ManageGroupSubmissions}
 
 \begin{DataIntro}
 \tStart{When status and/or submissions of the groups needs to be assessed or altered.}
@@ -110,7 +110,7 @@ This work area comprises of adding exercises, updating exercises, assessing and 
 \end{DataIntro}
 
 \begin{TaskTable}
-\Record{Assess handin submission + feedback status for groups.}{The system provides an overview, showing all groups, and status (handin submissions and feedback) for each exercise. Groups with negative feedback should be flagged.}{}
+\Record{Assess handin submission + feedback status for groups.}{The system provides an overview, showing all groups, and status (handin submissions and feedback) for each exercise. Groups with negative feedback could be flagged to increase overview.}{}
 \RecordAddi
 {p}
 {\textbf{Problem:} Students send reviews as email to lecturer - time consuming to keep track of.}{}
@@ -121,6 +121,22 @@ This work area comprises of adding exercises, updating exercises, assessing and 
 \Record{Override group status, such as marking handins accepted.}{}{}
 \end{TaskTable}
 
+
+\subsection{Assess individual submission status}\label{sec:ManageStudentSubmissions}
+
+\begin{DataIntro}
+\tStart{When status and/or submissions of the student needs to be assessed or altered.}
+\tEnd{When the When status and/or submissions have been managed. }
+\tFreq{Several times a day, depending on the exercise schedule}
+\tUsers{Students}
+\end{DataIntro}
+
+\begin{TaskTable}
+\Record{Assess personal handin and review submission status along with feedback.}{The system provides an overview, showing all exercises, and status (handin and review submissions and feedback) for each exercise. The system may also show reviewees for each exercise.}{}
+
+\Record{Read feedback, reviews and handin submissions.}{}{}
+
+\end{TaskTable}
 
 \subsection{Submit handin}\label{sec:SubmitHandin}
 

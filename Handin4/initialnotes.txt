@@ -7,9 +7,8 @@ Lecturer tasks:
    - pull students out of group
    - add student to group
    - create group
-   - delete group
-   
- - exclude student from review list
+   - delete group   
+   - exclude student from review list
    
 
 
@@ -36,17 +35,17 @@ Lecturer tasks:
    - see track record for group / student
    - manually override submission status for groups:   
    - also as student: here are those you need to review, released on deadline
+   - freeze reviews / submission
 	
    
    review assignments on deadline. 
    
    
- - freeze reviews / submission
+ 
   
 Student tasks:
  - Submit handin
-   - submit handin
-    
+   - submit handin    
    - variants: update submission, resubmission, past deadline, not final submission
  
  - Submit review
@@ -63,9 +62,12 @@ Student tasks:
    
 Events:
  - deadline for submission
-   - Assign reviewers (minimal repetition, reviewers cannot be in your group, reviewers should not be assigned to multiple members of the same group)
+   - Assign reviewers (individual students) (minimal repetition, reviewers should not be in your group, reviewers should not be assigned to multiple members of the same group)
      - Current problem: doing this by hand is cumbersome 
    - distribute handin to reviewers
+
+ - deadline for reviews
+  - distribute feedback to reviewees
    
 Questions for Joey: 
  - Should groups be formed in advance of handing in? - when should reviewers be assigned? groups??
@@ -79,6 +81,3 @@ Questions for Joey:
    - possible to upload past deadline, just flag as late
    
  - dealing with duplication of review assignments should be possible
- - generall
-
- - reviews on deadline
