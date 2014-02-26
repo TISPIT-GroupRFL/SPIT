@@ -24,72 +24,51 @@ This work area comprises adding and removing students from the system.
 
 
 \begin{TaskTable}
-\Record{add students}{import from CN group + manually (stads)}{}
-
-\Record
-{remove students}
-{•}
-{}
-
-\Record
-{pull students out of group}
-{•}
-{}
-
-\Record
-{add student to group}
-{•}
-{}
-
-
+\Record{Add students to the system}{List of enrolled students can be imported from STADS.}{}
 \RecordAddi
-{a}
-{Aktion to take}
-{Expectation}
-{}
+{p}
+{\textbf{Problem:} Currently a spreadsheet is made manually.}{}{}
 
+\Record
+{Remove students from the system.}{}{}
+
+\Record
+{Pull students out of group.}{}{}
+
+\Record
+{Add students to group.}{}{}
+
+\Record
+{Create student group.}{}{}
+
+\Record
+{Delete student group.}{}{}
+
+\Record
+{Exclude student from review list.}{}{}
 \RecordAddi
-{b}
-{Aktion to take}
-{Expectation}
-{}
+{p}
+{\textbf{Problem:} Currently inactive students may be assigned reviews.}{}{}
 
 \Record
-{create group}
-{•}
-{}
-
-\Record
-{delete group}
-{•}
-{}
-
-\Record
-{exclude student from review list}
-{•}
-{}
-
-\Record
-{freeze groups}
-{•}
-{}
+{Freeze student groups, preventing students from modifying the groups.}{}{}
 \end{TaskTable}
 
-\subsection{Form groups}
+\subsection{Form groups} \label{sec:FormGroups}
 
-\begin{longtable}{l p{13cm}}
- \textbf{Start:} & On course start, when not in a group, or when adding group members. \\
- \textbf{End:} & When the the groups are as desired.  \\
- \textbf{Frequency:} & Performed at least once by all students, but seldom more than once. \\
- \textbf{Users:} & Students \\
-\end{longtable}
+\begin{DataIntro}
+\tStart{On course start, when not in a group, or when adding group members.}
+\tEnd{When the the groups are as desired.}
+\tFreq{Performed at least once by all students, but seldom more than once.}
+\tUsers{Students}
+\end{DataIntro}
 
-\begin{itemize}
-\item Form a group
-\item Invite other students to the group.
-\item Send out invite notice
-\item Join a group
-\end{itemize}
+\begin{TaskTable}
+\Record{Form a group.}{}{}
+\Record{Invite other students to the group.}{}{}
+\Record{Send out invite notice.}{}{}
+\Record{Join a group.}{}{}
+\end{TaskTable}
 
 \section{Work area: Submission management}
 This work area comprises of adding exercises, updating exercises, assessing and possibly overriding submission and review status for groups.
@@ -100,71 +79,96 @@ This work area comprises of adding exercises, updating exercises, assessing and 
  \textbf{Environment:} & Office or similar.
 \end{tabular}
 
-\subsection{Manage exercise}
+\subsection{Manage exercise} \label{sec:ManageExercise}
 
-\begin{longtable}{l p{13cm}}
- \textbf{Start:} & When exercises needs to be inspected, added, updated or removed. \\
- \textbf{End:} & When the exercise(s) have been inspected, added, updated or removed.  \\
- \textbf{Frequency:} & About one exercise added weekly. Other variants are rare. \\
- \textbf{Users:} & Lecturers \\
-\end{longtable}
+\begin{DataIntro}
+\tStart{When exercises needs to be inspected, added, updated or removed.}
+\tEnd{When the exercise(s) have been inspected, added, updated or removed.}
+\tFreq{About one exercise added weekly. Other variants are rare.}
+\tUsers{Lecturers}
+\end{DataIntro}
 
-\begin{itemize}
-\item Inspect exercise
-\item Add exercise (variant: update)
-\item Record description, deadlines (initial, review, resubmission), number of reviewers, timestamp
-\item Remove exercise
-\item Notify students
-\item freeze reviews / submission
-\item Nice to have: versioning
-\end{itemize}
+\begin{TaskTable}
+\Record{Inspect exercise.}{Nice to have: versioning}{}
+\Record{Add exercise and record associated data as defined in \fxnote{ref til D-exercise}.}{Nice to have: versioning}{}
+\RecordAddi
+{a}
+{This exercise has been added: update exercise and record updated associated data as defined in \fxnote{ref til D-exercise}. }{Nice to have: versioning}{}
 
-\subsection{Manage submission and review status}
+\Record{Remove exercise and associated handins and revies.}{}{}
+\Record{Notify students.}{}{}
+\Record{Disable submission of handins and reviews.}{}{}
+\end{TaskTable}
 
-\begin{longtable}{l p{13cm}}
- \textbf{Start:} & When status and/or submissions of the groups needs to be assessed or altered. \\
- \textbf{End:} & When the When status and/or submissions have been managed.  \\
- \textbf{Frequency:} & Several times a day, depending on the exercise schedule. \\
- \textbf{Users:} & Lecturers \\
-\end{longtable}
+\subsection{Manage submission status}\label{sec:ManageSubmissions}
 
-\begin{itemize}
-\item Assess submission + review status for groups
-	\begin{itemize}
-	\item \textbf{Current problem:} students send reviews as email to lecturer - time consuming to keep track of.
-	\item \textbf{Possible solution:} The system provides an overview, showing all groups, and status (submission ,feedback and review) for each exercise. Filter  
-	\end{itemize}
-\item Read feedback, reviews and submissions, including older versions
-\item Override group status
-\end{itemize}
+\begin{DataIntro}
+\tStart{When status and/or submissions of the groups needs to be assessed or altered.}
+\tEnd{When the When status and/or submissions have been managed. }
+\tFreq{Several times a day, depending on the exercise schedule}
+\tUsers{Lecturers}
+\end{DataIntro}
 
-\subsection{Submit handin}
+\begin{TaskTable}
+\Record{Assess handin submission + feedback status for groups.}{The system provides an overview, showing all groups, and status (handin submissions and feedback) for each exercise. Groups with negative feedback should be flagged.}{}
+\RecordAddi
+{p}
+{\textbf{Problem:} Students send reviews as email to lecturer - time consuming to keep track of.}{}
 
-\begin{longtable}{l p{13cm}}
- \textbf{Start:} & When the group has finished a handin for an exercise. \\
- \textbf{End:} & When the handin has been submitted.  \\
- \textbf{Frequency:} & Atleast once per group per exercise. Depends on the frequency of the exercises. \\
- \textbf{Users:} & Students \\
-\end{longtable}
+\Record{Assess handin and review submission status along with feedback for individual students.}{The system provides an overview, showing all students, and status (handin and review submissions and feedback) for each exercise.}{}
 
-\begin{itemize}
-\item Submit handin file
-\item Record comment and timestamp
-\end{itemize}
+\Record{Read feedback, reviews and handin submissions, including older versions.}{}{}
+\Record{Override group status, such as marking handins accepted.}{}{}
+\end{TaskTable}
 
-\subsection{Submit review}
 
-\begin{longtable}{l p{13cm}}
- \textbf{Start:} & When the student has finished a review for an assigned handin. \\
- \textbf{End:} & When the review has been submitted.  \\
- \textbf{Frequency:} & Depends on the number of reviewers for each exercise, and frequency of exercises. \\
- \textbf{Users:} & Students \\
-\end{longtable}
+\subsection{Submit handin}\label{sec:SubmitHandin}
 
-\begin{itemize}
-\item Submit review file(s)
-\item Record comment, assessment(okay/not okay), and timestamp
-\end{itemize}
+\begin{DataIntro}
+\tStart{When the group has finished a handin for an exercise.}
+\tEnd{When the handin has been submitted. }
+\tFreq{Atleast once per group per exercise. Depends on the frequency of the exercises.}
+\tUsers{Students}
+\end{DataIntro}
 
+\begin{TaskTable}
+
+\Record{Submit handin and comments.}{}{}
+\RecordAddi
+{a}
+{Handin has already been submitted: update handin and comment.}{}
+
+\Record{Distribute handin to reviewers.}{The system could assign reviews and distribute the handins to the reviewers when passing the deadline for submissions.}{}
+
+\RecordAddi
+{p}
+{\textbf{Problem:} Students send handins as email to reviewers, after consulting the table of reviewers. This approach is error-prone.}{}
+
+
+\end{TaskTable}
+
+
+\subsection{Submit review}\label{sec:SubmitReview}
+
+\begin{DataIntro}
+\tStart{When the student has finished a review for an assigned handin.}
+\tEnd{When the review has been submitted. }
+\tFreq{Depends on the number of reviewers for each exercise, and frequency of exercises.}
+\tUsers{Students}
+\end{DataIntro}
+
+\begin{TaskTable}
+
+\Record{Submit Submit review file(s) and record comment, assessment(okay/not okay) and timestamp}{}{}
+\RecordAddi
+{a}
+{Review has already been submitted: update review and associated data.}{}
+
+\Record{Distribute review to reviewees.}{The system could distribute the handin to the reviewee when passing review deadline.}{}
+
+\RecordAddi
+{p}
+{\textbf{Problem:} Students send reviews as email to reviewees and teachers. This approach is error-prone.}{}{}
+\end{TaskTable}
 
 \end{document}
