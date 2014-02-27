@@ -1,21 +1,27 @@
 \documentclass[Main]{subfiles}
 \begin{document}
 
+
 \subsection{Functional requirements}
 
 Functional requirements may be tasks to support, data to store, systems to integrate, etc. 
 Here is a fictitious example without relation to the present delivery. 
 The functional requirement is that the system must support a number of tasks, including Section \ref{sec:ManageStudents}, and preferably eliminate the current problems.
 
-\subsection{Submit review (Example)} \fxnote{highlight baggrund?}
+\subsection{Submit review (Example)}
 
+\fboxsep0pt
+\colorbox{light-gray}{\begin{minipage}{\textwidth}
 \begin{DataIntro}
 \tStart{When the student has finished a review for an assigned handin.}
 \tEnd{When the review has been submitted. }
 \tFreq{Depends on the number of reviewers for each exercise, and frequency of exercises.}
 \tUsers{Students}
 \end{DataIntro}
-
+\end{minipage}}
+\\
+%\fboxsep0pt
+\colorbox{light-gray}{\begin{minipage}{\textwidth}
 \begin{TaskTable}
 
 \Record{Submit Submit review file(s) and record comment, assessment(okay/not okay) and timestamp}{}{}
@@ -29,7 +35,9 @@ The functional requirement is that the system must support a number of tasks, in
 {p}
 {\textbf{Problem:} Students send reviews as email to reviewees and teachers. This approach is error-prone.}{}{}
 \end{TaskTable}
-
+\end{minipage}}
+\\
+\\
 The table lists the subtasks and problems of task C5. 
 There is thus a requirement to support each of the table lines to some extent. 
 The data about Start, End and Frequency are not in the table, meaning that they are not requirements.
@@ -78,6 +86,5 @@ One example is various ways a user can look up a code in a table.
 
 \item \textbf{Examples} and other information to help the reader understand the requirements.
 \end{enumerate}
-
 
 \end{document}
