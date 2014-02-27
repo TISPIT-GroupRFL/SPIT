@@ -96,6 +96,11 @@
 {\hline \end{longtable}
 \setcounter{ctStep}{0}}
 
+
+%------------------------------------
+% 	Goal Table
+%------------------------------------
+
 \newcommand{\gEnum}{0.005 \textwidth}
 \newcommand{\gFirst}{0.18 \textwidth}
 
@@ -118,3 +123,29 @@
 \parbox[t]{\gSecond}{#2} & %
 \parbox[t]{\gThird}{#3} & %
 \parbox[t]{\gFourth}{#4} \\}
+
+
+%------------------------------------
+% 	Documentation and installation Table
+%------------------------------------
+
+\newcommand{\dEnum}{0.005 \textwidth}
+\newcommand{\dFirst}{0.50 \textwidth}
+
+\newlength{\dSum}
+\setlength{\dSum}{0.505\textwidth}
+
+\newcommand{\dSecond}{0.30 \textwidth}
+\newcommand{\dThird}{0.05 \textwidth}
+
+\newenvironment{DocTable}
+{\begin{longtable}{ p{\dEnum} p{\dFirst}  p{\dSecond} p{\dThird} }
+\hline \multicolumn{2}{l}{\begin{minipage}{\dSum}\textbf{Requirements:}\end{minipage}} & \textbf{Example solution} & \textbf{Code} \\ \hline}
+{\hline \end{longtable}
+\setcounter{ctStep}{0}}
+
+\newcommand{\Doc}[3]%
+{\parbox[t]{\dEnum}{\step} & \parbox[t]{\dFirst}{#1} & %
+\parbox[t]{\dSecond}{#2} & %
+\parbox[t]{\dThird}{#3} \\}
+
