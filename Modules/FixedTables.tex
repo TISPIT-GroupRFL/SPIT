@@ -95,3 +95,26 @@
 \hline \multicolumn{2}{l}{\textbf{Requirement:}} & \textbf{Example solution} & \textbf{Code} \\ \hline}
 {\hline \end{longtable}
 \setcounter{ctStep}{0}}
+
+\newcommand{\gEnum}{0.005 \textwidth}
+\newcommand{\gFirst}{0.18 \textwidth}
+
+\usepackage{calc}
+\newlength{\gSum}
+\setlength{\gSum}{0.27\textwidth}
+
+\newcommand{\gSecond}{0.30 \textwidth}
+\newcommand{\gThird}{0.30 \textwidth}
+\newcommand{\gFourth}{0.10 \textwidth}
+
+\newenvironment{GoalTable}
+{\begin{longtable}{ p{\gEnum} p{\gFirst}  p{\gSecond} p{\gThird} p{\gFourth} }
+\hline \multicolumn{2}{l}{\begin{minipage}{\gSum}\textbf{Goals for the new system:}\end{minipage}} & \textbf{Solution vision} & \textbf{Related requirements} & \textbf{Dealine} \\ \hline}
+{\hline \end{longtable}
+\setcounter{ctStep}{0}}
+
+\newcommand{\Goal}[4]%
+{\parbox[t]{\gEnum}{\step} & \parbox[t]{\gFirst}{#1} & %
+\parbox[t]{\gSecond}{#2} & %
+\parbox[t]{\gThird}{#3} & %
+\parbox[t]{\gFourth}{#4} \\}
