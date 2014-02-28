@@ -149,3 +149,16 @@
 \parbox[t]{\dSecond}{#2} & %
 \parbox[t]{\dThird}{#3} \\}
 
+%------------------------------------
+% 	Dynamic table
+%------------------------------------
+\newenvironment{DynTable}[1]
+{\begin{longtable}{ p{\dEnum} p{\dFirst}  p{\dSecond} p{\dThird} }
+\hline \multicolumn{2}{l}{\begin{minipage}{\dSum}\textbf{#1}\end{minipage}} & \textbf{Example solution} & \textbf{Code} \\ \hline}
+{\hline \end{longtable}}
+
+\newcommand{\Dyn}[4]%
+{\parbox[t]{\dEnum}{#1} & \parbox[t]{\dFirst}{#2} & %
+\parbox[t]{\dSecond}{#3} & %
+\parbox[t]{\dThird}{#4} \\}
+
