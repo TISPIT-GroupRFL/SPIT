@@ -106,7 +106,7 @@ This work area comprises of adding exercises, updating exercises, assessing and 
 
 \begin{DataIntro}
 \tStart{\code{When} status and/or submissions of the groups needs to be assessed or altered.}
-\tEnd{When the \code{When} status and/or submissions have been managed. }
+\tEnd{\code{When} status and/or submissions have been managed. }
 \tFreq{Several times a day, depending on the exercise schedule}
 \tUsers{Lecturers}
 \end{DataIntro}
@@ -120,21 +120,38 @@ This work area comprises of adding exercises, updating exercises, assessing and 
 \Record{Assess handin and review submission status along with feedback for individual students.}{The system provides an overview, showing all students, and status (handin and review submissions and feedback) for each exercise.}{}
 
 \Record{Read feedback, reviews and handin submissions, including older versions.}{}{}
-\Record{Override group status, such as marking handins as accepted.}{}{}
+\Record{Override group status, such as marking handins as accepted, while noting the reason.}{}{}
 \end{TaskTable}
 
-
-\subsection{Assess individual submission status}\label{sec:ManageStudentSubmissions}
+\subsection{Handle end of lecturing}\label{sec:EOLecturing}
 
 \begin{DataIntro}
-\tStart{\code{When} status and/or submissions of the student needs to be assessed or altered.}
-\tEnd{When the \code{When} status and/or submissions have been managed. }
+\tStart{\code{When} the deadline for reviews of the last exercise of the semester has been passed.}
+\tEnd{\code{When} the reports has been extracted. }
+\tFreq{Once per quarter.}
+\tUsers{Lecturers}
+\end{DataIntro}
+
+\begin{TaskTable}
+\Record{Generate a list of students whom have failed to deliver any handins or review.}{}{}
+
+\Record{Generate a list of students whom have delivered all handins and reviews.}{}{}
+
+\Record{Generate a list of students whom have had any status overridden along with associated notes.}{}{}
+
+\end{TaskTable}
+
+\subsection{Inspect individual submission status}\label{sec:ManageStudentSubmissions}
+
+\begin{DataIntro}
+\tStart{\code{When} status and/or submissions of the student needs to be inpected or altered.}
+\tEnd{\code{When} status and/or submissions have been managed. }
 \tFreq{Several times a day, depending on the exercise schedule}
 \tUsers{Students}
 \end{DataIntro}
 
 \begin{TaskTable}
-\Record{Assess personal handin and review submission status along with feedback.}{The system provides an overview, showing all exercises, and status (handin and review submissions and feedback) for each exercise. The system may also show reviewees for each exercise when the handin deadline has passed.}{}
+\Record{Inspect personal handin and review submission status along with feedback.}{The system provides an overview, showing all exercises, and status (handin and review submissions and feedback) for each exercise. The system may also show reviewees for each exercise when the handin deadline has passed.}{}
 
 \Record{Read feedback, reviews and handin submissions.}{}{}
 
