@@ -3,4 +3,55 @@
 
 \section{Availability}
 
+The system is out of operation when it doesn't support some of the users as usual. 
+The cause of the breakdown may be: 
+
+\begin{enumerate}
+
+\item The customer's issues, e.g. errors in the customer's equipment.
+
+\item External errors, e.g. power failure.
+
+\item The supplier's issues, e.g. errors in software or configuration.
+
+\item Planned maintenance.
+
+\item Insufficient hardware capacity.
+
+\end{enumerate}
+\textbf{Solution note: Measuring availability}\\
+A breakdown is counted as at least 20 minutes, even if normal operation is resumed before. 
+If the following period of normal operation is less than 60 minutes, it is considered part of the breakdown period.
+\\
+\\
+When the supplier is not responsible for operations, only breakdowns with cause 3 are included in the availability statements. 
+When the supplier is responsible for operations too, he is also responsible for causes 2, 4, and 5.
+\\
+\\
+The operational time in a period is calculated as the total length of the period minus the total length of the breakdowns for which the supplier is responsible. 
+The availability is calculated as the operational time divided by the total length of the period. When only some of the users experience a breakdown, the availability may be adjusted. 
+One way is to calculate the availability for each user and take the average for all users. 
+
+\begin{DynTable}{Availability requirements}
+
+\Doc
+{The availability must be calculated periodically. 
+The calculation should compensate for the number of users experiencing breakdowns. }
+{The availability is stated monthly and calculated as described above.}
+{}
+
+\Doc
+{In the period from 4:00pm to 12:00pm on Friday, the system must have high availability.}
+{In these periods the total availability is at least $\underline{\quad}$\%. \\
+(The customer expects 99.5\%)}
+
+\Doc
+{In other periods the availability may be lower.}
+{In these periods the total availability is at least $\underline{\quad}$\%. \\
+(The customer expects 99\%)}
+{}
+
+
+\end{DynTable}
+
 \end{document}

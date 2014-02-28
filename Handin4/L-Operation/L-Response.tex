@@ -7,28 +7,68 @@ Response time is particularly important during the busiest hours, the peak load 
 \\
 \\
 When the system is operating, it must be able handle the number of transactions specified below with the specified response time. 
-The figures are estimated from task frequency (Chapter C), data volumes (Chapter \ref{cha:D}) and statistics from the present operation about peak load periods. 
-The figures are the nominal load, i.e. the supplier is not responsible for response time if the actual load exceeds the nominal load.
+The figures are estimated from task frequency (Chapter \ref{cha:C}), data volumes (Chapter \ref{cha:D}) and statistics from the present operation about peak load periods. 
+\\
+\\
+\textbf{Solution note: Measuring response time}\\
+The response time is the period from the user sends his command to the result is visible and the user can send a new command. 
+A command means a key press or a mouse click. 
+All measurements are made in peak load periods with the actual number of users, assuming that the actual load is within the nominal load above.
 
-\textbf{Nominal load}
-\begin{enumerate}
+\begin{DynTable}{Response time requirements}
+\Doc
+{\textbf{Fractile}. The time specified below must apply in almost all cases.}
+{In any one-hour period, $\underline{\quad}$ \% of the response times must be within the limits. (The customer expects 98\%.)}
+{}
 
-\item Simple queries in clinical sessions (C.10): 10 per second on average.
+\Doc
+{Response time measurements must be made regularly in the peak load periods.}
+{Measurements are made once a week with a stop watch.\\
+Or: The system measures all the time.}
+{}
 
-\item Updates in clinical sessions (C.10): 2 per second on average.
+\Doc
+{When moving from one field to the next, the user's typing speed must not be slowed down.}
+{Typing is possible within $\underline{\quad}$ s.\\
+(The customer expects 0.2 s.)}
+{}
 
-\item  Simple queries in patient management (C1 to C4): 3 per second on average.
+\Doc
+{When moving from one screen to the next, data must be visible and typing possible within the mental switching time (around 1.3 s).}
+{Data is visible and typing possible within $\underline{\quad}$ s.\\
+(The customer expects 1.3 s.)}
+{}
 
-\item Public web access: 5 page loads per second on average.
+\Doc
+{Lookup in drop-down lists must allow selection from the list within the mental switching time.}
+{Selection is possible within $\underline{\quad}$ s.\\
+ (The customer expects 1.3 s.)}
+{}
 
-\end{enumerate}
+\Doc
+{Reports used frequently must be visible within the mental switching time.}
+{The report must be visible within $\underline{\quad}$ s. \\
+(The customer expects 1.3 s.)}
+{}
 
-Solution note: Measuring response time
-The response time is the period from the user sends his command to the result is visible and the user can send a new command. A command means a key press or a mouse click. All measurements are made in peak load periods with the actual number of users, assuming that the actual load is within the nominal load above.
+\Doc
+{Reports used occasionally must be visible before the user loses patience.}
+{The report must be visible within $\underline{\quad}$ s. \\
+(The customer expects 20 s.)}
+{}
 
-Production work: Measurements are made with a setup according to Chapter G.
+\Doc
+{Login must be completed before the user loses patience.}
+{The user can start working within $\underline{\quad}$ s. 
+In addition to the time he spends typing name and password. (The customer expects 10 s or better.) }
+{}
 
-The public web part: Measurements are made on a PC connected to the Internet through a 1 MB connection with low traffic on the route to the servers, but with peak load of the servers themselves.
+\Doc
+{Repeated login when the user temporarily has left the system must be completed before the user loses patience.}
+{The user can start working within $\underline{\quad}$ s. In addition to the time he spends typing his identification. (The customer expects 4 s.)}
+{}
+
+\end{DynTable}	
 
 
 \end{document}
