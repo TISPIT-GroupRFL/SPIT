@@ -6,20 +6,45 @@
  \textbf{External system:} & STADS keeps track course enrolling, and thus STADS holds a list of students taking each course. \\
  \textbf{Tasks:} &  This system is involved in task \ref{sec:ManageStudents} "Manage Students".\\
  \textbf{E-Documentation:} & The documentation can be requested by the customer, and will be delivered electronically.\\
- \textbf{E-data updates:} & \\
- \textbf{Data volume:} & \\
+ \textbf{E-data updates:} & N/A \\
+ \textbf{Data volume:} & A record per student on the course (about 20-50). Each record is about 100 characters. \\
 \end{tabular}
 
+\begin{DynTable}{Integration responsibility}
+\Dyn{1}{The supplier must integrate with STADS.}{}{}
+\end{DynTable}
 
+\begin{DynTable}{Task support}
+\Dyn{1}{The integration must support subtask 1 of task \ref{sec:ManageStudents} in an efficient manner.}{}{}
+\end{DynTable}
+
+\begin{DynTable}{Data import}
+\Dyn{1}{Imported data matches the record described in \ref{sec:DataStudent}}{}{}
+\end{DynTable}
+
+\begin{DynTable}{Data recency}
+\Dyn{1}{Data must be imported when task \ref{sec:ManageStudents} is invoked.}{}{}
+\end{DynTable}
 
 \section{LDAP}\label{sec:LDAP}
 \begin{tabular}{l  p{13cm}}
- \textbf{External system:} &  \\
- \textbf{Tasks:} &   \\
+ \textbf{External system:} & This system provides the single sign-on service.\\
+ \textbf{Tasks:} & All tasks require the user to be authenticated using the LDAP service.\\
  \textbf{E-Documentation:} & The documentation can be requested by the customer, and will be delivered electronically. \\
- \textbf{E-data updates:} & \\
+ \textbf{E-data updates:} & LDAP data may update more than daily. \\
  \textbf{Data volume:} & \\
 \end{tabular}
 
+\begin{DynTable}{Integration responsibility}
+\Dyn{1}{The supplier must integrate with LDAP.}{}{}
+\end{DynTable}
+
+\begin{DynTable}{Task support}
+\Dyn{1}{All tasks require the user to be authenticated using the LDAP service. The authentication must take place if the user has been logged out, but when logged in, the user may perform all appropriate tasks.}{}{}
+\end{DynTable}
+
+\begin{DynTable}{Data recency}
+\Dyn{1}{Data must be imported before invoking the first task of a session.}{}{}
+\end{DynTable}
 
 \end{document}
