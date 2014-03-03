@@ -1,0 +1,36 @@
+\documentclass[oneside]{memoir}
+
+\input{Preamble}
+
+
+%FixMe pakken viser små kommentarer, hvor der skal rettes
+%--------------------------------------------------
+%Brug med følgende: \fxnote{det her skal uddybes!} 
+%Se liste over alle fixMe's: \listoffixmes
+%Erstat 'draft' med 'final' for at fjerne alle kommentarer
+%--------------------------------------------------
+\usepackage[footnote,draft,english,silent,nomargin]{fixme}
+
+\begin{document}
+
+
+\begin{titlingpage}
+\subfile{Frontpage}
+\end{titlingpage}
+
+\tableofcontents
+\listoffixmes
+
+\newpage
+\subfile{ChangeLog} 
+
+\subfile{CheckList}
+
+\chapter{Review}
+
+\subfile{Scenario}
+
+\subfile{Reflection}
+
+
+\end{document}
