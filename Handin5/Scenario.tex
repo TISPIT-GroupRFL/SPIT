@@ -1,8 +1,73 @@
-\documentclass[Main]{subfile}
+\documentclass[Main]{subfiles}
 
 \begin{document}
 
 \section{Scenario}
+
+
+\subsection{Data types}
+Data types are not discussed in this document, and offer little to no inside of how to handle data.
+It is stated the course has groups, filled with joiners and each course is set on a specific date.
+Each joiner must wear a badge created by an employee and the joiners of a course should be printable.
+All data goes through the system and are mostly collected from the Personal Information System (PIS) and in few cases created on-the-fly.
+\\
+\\
+Most of these data types are easy to describe, both in structure and relation.
+
+
+
+\subsection{Incorrect functionality scenario}
+In writing the specifications there are unanswered questions and holes in the scenarios for handling the clients of the system.
+
+
+
+
+\paragraph{Input and output}
+\begin{itemize}
+\item \textbf{ID 20140301-094900}: What is the optimal group size? 
+Who decides how many groups should be created?
+
+\item \textbf{ID 20140301-095600}: Should the same-office joiners still be as split as possible? Or will anything go here?
+
+\end{itemize}
+
+
+
+
+\paragraph{System events}
+
+
+
+
+\paragraph{Invariant properties}
+
+Hard to say -- so little data!
+
+
+
+\paragraph{Ambiguities and missing functionality}
+\begin{itemize}
+\item When are the events created? 
+
+\item Who can create an event?
+
+\item Will badges be printed when a user signs in to a course or beforehand?
+\fxnote{Should this be on the list?}
+
+\item Is the authentication related to the joiner's login at work?
+
+\item How are unexpected participants handled? Room, group?
+
+\item Who will host the server?
+
+\item Who will handle support for the system?
+
+\item \dots
+\end{itemize}
+
+
+
+
 
 
 \end{document}
