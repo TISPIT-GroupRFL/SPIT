@@ -28,6 +28,12 @@
 \addtocounter{ctStep}{1}%
 \arabic{ctStep}}
 
+\newcounter{cStep}
+\setcounter{cStep}{0}
+\newcommand{\stepP}{%
+\addtocounter{cStep}{1}%
+\alph{cStep}}
+
 
 %--------------------------------------------------
 %\begin{DataTable}
@@ -162,3 +168,45 @@
 \parbox[t]{\dSecond}{#3} & %
 \parbox[t]{\dThird}{#4} \\}
 
+
+%------------------------------------
+% 	Check Table
+%------------------------------------
+%\begin{CheckTable}
+%\Check
+%{Bla bla}
+%{bla bla}
+%
+%\Check
+%{Bla bla}
+%{bla bla}
+%
+%\end{CheckTable}
+%------------------------------------
+
+\newcommand{\cEnum}{0.005 \textwidth}
+\newcommand{\cFirst}{0.52 \textwidth}
+
+\usepackage{calc}
+\newlength{\cSum}
+\setlength{\cSum}{0.52\textwidth}
+
+\newcommand{\cSecond}{0.40 \textwidth}
+%\newcommand{\cThird}{0.40 \textwidth}
+
+\newenvironment{CheckTable}
+{\begin{longtable}{ p{\cEnum} p{\cFirst}  p{\cSecond}}
+\hline \multicolumn{2}{l}{\begin{minipage}{\gSum}\textbf{Criteria:}\end{minipage}} & \textbf{Yes, No, N/A} \\ \hline}
+{\hline \end{longtable}
+\setcounter{ctStep}{0}}
+
+\newcommand{\Check}[2]%
+{\parbox[t]{\cSum}{\step} & %
+\parbox[t]{\cFirst}{#1} & %
+\parbox[t]{\cSecond}{#2} 
+\setcounter{cStep}{0}\\}
+
+%\newcommand{\CheckP}[2]%
+%{\parbox[t]{\cSum}{\stepP} & %
+%\parbox[t]{\cSecond}{#1} & %
+%\parbox[t]{\cThird}{#2} \\}
