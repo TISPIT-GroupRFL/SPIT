@@ -16,8 +16,8 @@
 
 \makeevenhead{mystyle}{}{\\ \leftmark}{} 
 \makeoddhead{mystyle}{}{\\ \leftmark}{} 
-\makeevenfoot{mystyle}{}{\footerText}{} 
-\makeoddfoot{mystyle}{}{\footerText}{} 
+\makeevenfoot{mystyle}{\DocID}{\footerText}{} 
+\makeoddfoot{mystyle}{\DocID}{\footerText}{} 
 \makeatletter
 \makepsmarks{mystyle}{% Overskriften på sidehovedet
   \createmark{chapter}{left}{shownumber}{\@chapapp\ }{.\ }} 
@@ -28,8 +28,8 @@
 \makepagestyle{plain}
 \makeevenhead{plain}{}{}{}
 \makeoddhead{plain}{}{}{}
-\makeevenfoot{plain}{}{\footerText}{}
-\makeoddfoot{plain}{}{\footerText}{}
+\makeevenfoot{plain}{\DocID}{\footerText}{}
+\makeoddfoot{plain}{\DocID}{\footerText}{}
 \makefootrule{plain}{\textwidth}{\normalrulethickness}{0.4pt}
 
 \pagestyle{mystyle}
