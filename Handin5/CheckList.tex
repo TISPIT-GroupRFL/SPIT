@@ -50,6 +50,17 @@ A Requirements Specification is unambiguous if, and only if, every requirement s
 \begin{longtable}{p{8cm} | p{7.3cm}}
 \textbf{Criteria} & \textbf{Yes / No / NA} \\ \hline
 
+Are the requirements specified clearly enough to be turned over to an independent group for implementation and still be understood? & No. The SRS is missing context (background, business goals, vision). \\ \hline
+
+Are functional requirements separated from non-functional? & Yes, however the non-functional requirements are sorted by engineering roles - why? What significance does this have? \\ \hline
+
+Are requirements specified in a concise manner that avoids the likelihood of multiple interpretations? & Partially. Some requirements are ambiguous, but those are clearly marked with comments stating what is TBD.
+\begin{itemize}
+\item Req ID 20140301-103402 - Badge printing - "print" is an ambiguous term. PDF is mentioned, but not in the requirement.
+\item Req ID 20140301-124000 - Testing the web interface - What interface?
+\item Req ID 20140301-124500 - The TBD comment poorly worded. What does it mean?
+\item Req ID 20140301-124900 - Quality engineer - The requirement text is unclear, should the development use an agile process? 
+\end{itemize} \\ \hline
 
 
 \end{longtable}
