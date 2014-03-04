@@ -2,11 +2,57 @@
 
 \begin{document}
 
-
-
 \section{Checklist}
 
+This section provides a checklist approach to inspect an SRS. The questions used in this section are relevant questions from the requirements verification checklist used by \textit{System Development Life Cycle process (SDLC)}.
 
+\subsection{Correct}
+A Requirements Specification is correct if, and only if, every requirement stated therein is one that the system/software shall meet.
+
+\begin{longtable}{p{8cm} | p{7.3cm}}
+\textbf{Criteria} & \textbf{Yes / No / NA} \\ \hline
+
+Is the expected response time, from the user’s point of view, specified for all necessary operations? & No. Only specified for one operation (Req ID 20140228-212400) \\ \hline
+
+Are other timing considerations specified, such as processing time, data transfer, and throughput? & No. \\ \hline
+
+Are all the tasks to be performed by the system/software specified? & No. Handling new joiners on the day is not clearly specified. \\ \hline
+
+Does each task specify the data/information content used in the task and the data/information content resulting from the task? & No. 
+\begin{itemize}
+\item Req ID 20140301-103401 - List printing - Does not specify what data to be printed for each person.
+\item Req ID 20140301-103403 - Adding employee in PIS - Relevant data for an employee not specified.
+\end{itemize} \\ \hline
+
+Are the physical security requirements specified? & N/A \\ \hline
+Are the operational security requirements specified? & Yes \\ \hline
+
+Is the reliability of the system/software specified, including the consequences of failure, vital information protected from failure, error detection, and recovery? & Yes. \\ \hline
+
+Are acceptable trade-offs between competing attributes specified, for example, between robustness and correctness? & No. \\ \hline
+
+Are internal interfaces, such as software and hardware, defined? & N/A. \\ \hline
+
+Are external interfaces, such as users (e.g., people), software, and hardware defined? & Partially. \begin{itemize}
+\item TIS/PIS interface does not specify data/format.
+\item Food/drinks ordering and room reservation were mentioned in section 2.1 "Product perspective" but not specified.
+\end{itemize} \\ \hline
+
+Is the definition of success included? Of failure? & Yes. Availability required is specified in Req ID 20140228-213700. \\ \hline
+
+Is each requirement relevant to the problem and its solution? & Yes. However, Food/drinks ordering and room reservation were mentioned in section 2.1 "Product perspective" but have not been requested by the customer. \\ \hline
+
+\end{longtable}
+
+\subsection{Unambiguous}
+A Requirements Specification is unambiguous if, and only if, every requirement stated therein has only one interpretation.
+
+\begin{longtable}{p{8cm} | p{7.3cm}}
+\textbf{Criteria} & \textbf{Yes / No / NA} \\ \hline
+
+
+
+\end{longtable}
 
 
 \end{document}
