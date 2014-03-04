@@ -196,15 +196,15 @@
 
 \newenvironment{CheckTable}
 {\begin{longtable}{ p{\cEnum} p{\cFirst}  p{\cSecond}}
-\hline \multicolumn{2}{l}{\begin{minipage}{\gSum}\textbf{Criteria:}\end{minipage}} & \textbf{Yes, No, N/A} \\ \hline}
-{\hline \end{longtable}
+\hline \multicolumn{2}{l}{\begin{minipage}{\gSum}\textbf{Criteria:}\end{minipage}} & \textbf{Yes, No or N/A} \\ \hline}
+{\end{longtable}
 \setcounter{ctStep}{0}}
 
 \newcommand{\Check}[2]%
 {\parbox[t]{\cSum}{\step} & %
 \parbox[t]{\cFirst}{#1} & %
 \parbox[t]{\cSecond}{#2} 
-\setcounter{cStep}{0}\\}
+\setcounter{cStep}{0}\\ \hline}
 
 %\newcommand{\CheckP}[2]%
 %{\parbox[t]{\cSum}{\stepP} & %

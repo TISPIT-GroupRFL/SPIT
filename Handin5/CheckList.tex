@@ -9,61 +9,78 @@ This section provides a checklist approach to inspect an SRS. The questions used
 \subsection{Correct}
 A Requirements Specification is correct if, and only if, every requirement stated therein is one that the system/software shall meet.
 
-\begin{longtable}{p{8cm} | p{7.3cm}}
-\textbf{Criteria} & \textbf{Yes / No / NA} \\ \hline
+\begin{CheckTable}
+\Check
+{Is the expected response time, from the user’s point of view, specified for all necessary operations?}
+{No. Only specified for one operation (Req ID 20140228-212400)}
 
-Is the expected response time, from the user’s point of view, specified for all necessary operations? & No. Only specified for one operation (Req ID 20140228-212400) \\ \hline
+\Check
+{Are other timing considerations specified, such as processing time, data transfer, and throughput?}
+{No.}
 
-Are other timing considerations specified, such as processing time, data transfer, and throughput? & No. \\ \hline
+\Check
+{Are all the tasks to be performed by the system/software specified?}
+{No. Handling new joiners on the day is not clearly specified.}
 
-Are all the tasks to be performed by the system/software specified? & No. Handling new joiners on the day is not clearly specified. \\ \hline
-
-Does each task specify the data/information content used in the task and the data/information content resulting from the task? & No. 
+\Check
+{Does each task specify the data/information content used in the task and the data/information content resulting from the task?}
+{No. 
 \begin{itemize}
 \item Req ID 20140301-103401 - List printing - Does not specify what data to be printed for each person.
 \item Req ID 20140301-103403 - Adding employee in PIS - Relevant data for an employee not specified.
-\end{itemize} \\ \hline
+\end{itemize}}
 
-Are the physical security requirements specified? & N/A \\ \hline
-Are the operational security requirements specified? & Yes \\ \hline
+\Check{Are the physical security requirements specified?}{N/A}
 
-Is the reliability of the system/software specified, including the consequences of failure, vital information protected from failure, error detection, and recovery? & Yes. \\ \hline
+\Check{Are the operational security requirements specified?}{Yes.}
 
-Are acceptable trade-offs between competing attributes specified, for example, between robustness and correctness? & No. \\ \hline
+\Check{Is the reliability of the system/software specified, including the consequences of failure, vital information protected from failure, error detection, and recovery?}{Yes.}
 
-Are internal interfaces, such as software and hardware, defined? & N/A. \\ \hline
+\Check{Are acceptable trade-offs between competing attributes specified, for example, between robustness and correctness?\\}{No.}
 
-Are external interfaces, such as users (e.g., people), software, and hardware defined? & Partially. \begin{itemize}
+\Check{Are internal interfaces, such as software and hardware, defined?\\}{N/A.}
+
+\Check{Are external interfaces, such as users (e.g., people), software, and hardware defined?}{Partially. \begin{itemize}
 \item TIS/PIS interface does not specify data/format.
 \item Food/drinks ordering and room reservation were mentioned in section 2.1 "Product perspective" but not specified.
-\end{itemize} \\ \hline
+\end{itemize}}
 
-Is the definition of success included? Of failure? & Yes. Availability required is specified in Req ID 20140228-213700. \\ \hline
+\Check{Is the definition of success included? Of failure?}{Yes. Availability required is specified in Req ID 20140228-213700.\\}
 
-Is each requirement relevant to the problem and its solution? & Yes. However, Food/drinks ordering and room reservation were mentioned in section 2.1 "Product perspective" but have not been requested by the customer. \\ \hline
+\Check{Is each requirement relevant to the problem and its solution?}{Yes. However, Food/drinks ordering and room reservation were mentioned in section 2.1 "Product perspective" but have not been requested by the customer.}
 
-\end{longtable}
+\end{CheckTable}
+
 
 \subsection{Unambiguous}
 A Requirements Specification is unambiguous if, and only if, every requirement stated therein has only one interpretation.
 
-\begin{longtable}{p{8cm} | p{7.3cm}}
-\textbf{Criteria} & \textbf{Yes / No / NA} \\ \hline
+\begin{CheckTable}
 
-Are the requirements specified clearly enough to be turned over to an independent group for implementation and still be understood? & No. The SRS is missing context (background, business goals, vision). \\ \hline
+\Check{Are the requirements specified clearly enough to be turned over to an independent group for implementation and still be understood?\\}{ No. The SRS is missing context (background, business goals, vision).}
 
-Are functional requirements separated from non-functional? & Yes, however the non-functional requirements are sorted by engineering roles - why? What significance does this have? \\ \hline
+\Check{Are functional requirements separated from non-functional?}{Partially, however the non-functional requirements are sorted by engineering roles - why? What significance does this have?
 
-Are requirements specified in a concise manner that avoids the likelihood of multiple interpretations? & Partially. Some requirements are ambiguous, but those are clearly marked with comments stating what is TBD.
+\begin{itemize}
+\item Req ID 20140301-095500 \& 20140301-095600 Are listed as functional requirements, but are non-functional.
+\end{itemize}
+
+}
+
+\Check{Are requirements specified in a concise manner that avoids the likelihood of multiple interpretations?}{Partially. Some requirements are ambiguous, but those are clearly marked with comments stating what is TBD.
 \begin{itemize}
 \item Req ID 20140301-103402 - Badge printing - "print" is an ambiguous term. PDF is mentioned, but not in the requirement.
 \item Req ID 20140301-124000 - Testing the web interface - What interface?
 \item Req ID 20140301-124500 - The TBD comment poorly worded. What does it mean?
-\item Req ID 20140301-124900 - Quality engineer - The requirement text is unclear, should the development use an agile process? 
-\end{itemize} \\ \hline
+\item Req ID 20140301-124900 - Quality engineer - The requirement text is unclear, should the development use an agile process?
+\item Req ID 20140228-213500 - Failure is not defined.
+\item Req ID 20140228-213700 - Availability is not defined.
+\item Req ID 20140301-091900 - How is a participant unexpected?
+\item Req ID 20140228-215300 - What other systems? 
+\end{itemize}}
 
+\end{CheckTable}
 
-\end{longtable}
 
 \subsection{Complete}
 A Requirements Specification is complete if, and only if, it includes the following elements:
@@ -73,6 +90,112 @@ A Requirements Specification is complete if, and only if, it includes the follow
 \item Descriptive labels for and references to all figures, tables, and diagrams in the Requirements Specification and definition of all terms and units of measure.
 
 \end{itemize}
+
+\begin{CheckTable}
+
+\Check{Are all the inputs to the system/software specified, including their source, accuracy, range of values, and frequency?}
+{No - Only sources are specified.}
+
+\Check{Are all the outputs from the system/software specified, including their  destination, accuracy, and range of values, frequency, and format?}
+{Partially.
+\begin{itemize}
+\item Req ID 20140301-103402 does not specify badge size, output format/destination or frequency.
+\item Req ID 20140301-103401 - List printing - Does not specify what data to be printed for each person, Output format/destination or frequency.
+\end{itemize}
+}
+
+\Check{Are all the communication interfaces specified, including handshaking, error checking, and communication protocols?\\}{No.}
+
+\Check{Has analysis been performed to identify missing requirements?}{No. However, additional enquiries to the customer has been made.\\}
+
+\Check{Are the areas of incompleteness specified when information is not available?}{Yes. Missing information has been marked with a TBD comment, or an empty section implying missing data.}
+
+\Check{Are the requirements complete, such that if the product satisfied every requirement it would be acceptable?}{Yes. Assuming TBD and empty sections are addressed.}
+
+\Check{Is it possible to implement each and every requirement?}{Yes. Assuming TBD and empty sections are addressed.}
+
+\Check{Is the maintainability of the system/software specified, including the ability to respond to changes in the operating environment, interfaces, accuracy, performance, and additional predicted capabilities?}{No.}
+
+\Check{Have requirements for communication among system/software components been specified?}{N/A}
+
+\Check{Have overall function and behavior of the system/software been defined?}{No. The system overview is a figure without accompanying description.}
+
+\Check{Have appropriate constraints, assumptions, and dependencies been explicitly and unambiguously stated?}{No constraints stated. No assumptions has been stated. It is unclear whether food service and room reservation is a dependency.}
+
+\Check{Has the required technology infrastructure for the system/software been adequately specified?}{No. The requirements for the server has not been stated.}
+
+\Check{Has the scope of the system/software been bounded?}{Partially. Information on amount of joiners and frequency of courses is missing.}
+
+\Check{Are all figures, tables, and diagrams labeled in a descriptive manner?}{ No. The figure in 2.1 Product Perspective is not unlabeled.\\ }
+
+\Check{Are all figures, tables, and diagrams referenced within the document? \\}{No.}
+
+\Check{Are all terms and units of measure defined appropriately?}{N/A}
+
+\end{CheckTable}
+
+\subsection{Consistent}
+Consistency refers to internal consistency. If a Requirements Specification does not agree with other organizational and project documentation, then it is not correct.
+
+\begin{CheckTable}
+\Check{Do the requirements avoid specifying the design?}{No. \begin{itemize}
+\item The scope states the badge generator should generate a PDF file. This cannot be traced to a costumer requirement.
+\item Req ID 20140228-215300 states the system should use web services. The SRS defines web services to use XML in 1.4 "Definitions, acronyms, and abbreviations". This is design.
+\end{itemize} }
+
+\Check{Are the requirements specified at a consistent level of detail?}{Yes.}
+
+\Check{Should any requirements be specified in more detail? }{Yes. All functional requirements are missing subtasks, goals and precondition.}
+
+\Check{Should any requirements be specified in less detail?}{No.}
+
+\Check{ Are the requirements consistent with the content of other organizational and project documentation?}{N/A.}
+
+\end{CheckTable}
+
+\subsection{Ranked for importance and/or stability}
+A Requirements Specification is ranked for importance and/or stability if each requirement in it has an identifier to indicate either the importance or stability of that particular requirement. Examples of requirements rank classifications include essential, conditional, or optional. Stability may be specified in terms of the number of expected changes to the requirement. 
+
+\begin{CheckTable}
+\Check{Do requirements have an associated identifier to indicate either the importance or stability of that particular requirement?}{No, however Req ID 20140301-124900 States "IBM(the customer) will be product owners and prioritize user stories".}
+
+\Check{Do conflicts exist regarding the importance and/or stability ranking of the requirements?}{N/A.}
+\end{CheckTable}
+
+\subsection{Verifiable}
+A Requirements Specification is verifiable if, and only if, every requirement stated therein is verifiable. A requirement is verifiable if, and only if, there exists some finite, cost-effective process with which a person or machine can check that the system/software meets the requirement.
+
+\begin{CheckTable}
+\Check{Is each requirement testable? Will it be possible for independent testing to determine whether each requirement has been satisfied?}{Yes.}
+\end{CheckTable}
+
+\subsection{Modifiable}
+A Requirements Specification is modifiable if, and only if, its structure and style are such that any changes to the requirements can be made easily, completely, and consistently while retaining the structure and style.
+
+\begin{CheckTable}
+\Check{Are requirements uniquely identified?}{Yes.}
+
+\Check{Have redundant requirements been consolidated?}{N/A.}
+
+\Check{Has each requirement been specified separately, avoiding compound requirements?}{Yes.}
+\end{CheckTable}
+
+\subsection{Traceable}
+A Requirements Specification is traceable if the origin of each of its requirements is clear and if it facilitates the referencing of each requirement in future development or enhancement documentation.
+
+\begin{CheckTable}
+\Check{Can each requirement be traced to its origin or source, such as a scope statement, change request, or legislation?}{No. Only source (author) is specified.}
+
+\Check{Is each requirement identified such that it facilitates referencing of each requirement in future development and enhancement efforts?}{Yes.}
+
+\Check{Has each requirement been cross-referenced to requirements in previous project documents that relate?}{Partially.
+\begin{itemize}
+\item Req ID 20140228-212400 - Response time requirement - should refer to 20140301-103401.
+\item Req ID 20140301-091900 - Authentication of unexpected participants - should refer to 20140301-103403.
+\end{itemize}}
+
+\end{CheckTable}
+
 
 
 \end{document}
