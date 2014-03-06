@@ -27,10 +27,12 @@ The data model is created using UML. The black diamond relationship (composition
 
 \section{Student}\label{sec:DataStudent}
 A \textit{Student} is a one of the participants of the course.
+
 \begin{DataIntro}
 \rSource{Students are enrolled at the start of the course. 
 Students are imported from STADS.}
-\rUse{Students are assigned to a \textit{Group} and can have speciel case regarding handins.}
+\rUse{Students are assigned to a \textit{Group} and can have special case regarding handins.}
+\rID{001}
 \end{DataIntro}
 
 \begin{DataTable}
@@ -66,8 +68,12 @@ A \textit{Group} is a list of students who will deliver handins together.
 \rSource{Have a minimum size of 1 student.}
 \rUse{Groups deliver handins.
 A group can be of only 1 student should this student choose to deliver a handin on his/her own.
-Each student can only be assigned to one group pr. course.}
+Each student can only be assigned to one group pr. course.}\rID{002}
 \end{DataIntro}
+
+
+
+
 
 \newpage
 \begin{DataTable}
@@ -101,6 +107,7 @@ A \textit{Teacher} is a lecturer of the course.
 \rSource{There will be at least 1 teacher at a course.}
 \rUse{Teachers upload exercises and deadline.\\
 Teachers approve reviews.}
+\rID{003}
 \end{DataIntro}
 
 \begin{DataTable}
@@ -133,6 +140,7 @@ An \textit{Exercise} is a a description for a task, and the students submit solu
 %\rExample{}
 \rSource{Created by a \textit{Teacher}.}
 \rUse{\textit{Students} most solve the exercises within the provided deadline in groups.}
+\rID{004}
 \end{DataIntro}
 
 \newpage
@@ -189,6 +197,7 @@ A date for when uploaded.}
 %\rExample{}
 \rSource{Student upload handins.}
 \rUse{Handins will be assigned to review for other students.}
+\rID{005}
 \end{DataIntro}
 
 \begin{DataTable}
@@ -234,6 +243,7 @@ The review can be uploaded multiple time in different versions -- only the last 
 %\rExample{}
 \rSource{Student.}
 \rUse{The reviews include notes for improvement for the other student.}
+\rID{006}
 \end{DataIntro}
 
 \begin{DataTable}

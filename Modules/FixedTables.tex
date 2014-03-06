@@ -4,18 +4,21 @@
 %\rExample{Preperation of sorts \\Anything here}
 %\rSource{Description of what is about to happen}
 %\rUse{How to use it}
+%\tID{ID wanted}
 %\end{DataIntro}
 %--------------------------------------------------
 \newcommand{\rLabel}{0.15 \textwidth}
 \newcommand{\rDescription}{0.8\textwidth}
-\newcommand{\rExample}[1]{\textbf{Example:} & \parbox[t]{\rDescription}{#1}}
-\newcommand{\rSource}[1]{\\ \textbf{Data source:} & \parbox[t]{\rDescription}{#1}}
-\newcommand{\rUse}[1]{\\ \textbf{Data use:} & \parbox[t]{\rDescription}{#1}}
+\newcommand{\rExample}[1]{\textbf{Example:} & \parbox[t]{\rDescription}{#1}\\}
+\newcommand{\rSource}[1]{ \textbf{Data source:} & \parbox[t]{\rDescription}{#1}\\}
+\newcommand{\rUse}[1]{\textbf{Data use:} & \parbox[t]{\rDescription}{#1}\\}
+\newcommand{\rID}[1]{\textbf{Requirement ID:} & \parbox[t]{\rDescription}{\drID #1}}
 
-\newcommand{\tStart}[1]{\textbf{Start:} & \parbox[t]{\rDescription}{#1}}
-\newcommand{\tEnd}[1]{\\\textbf{End:} & \parbox[t]{\rDescription}{#1}}
-\newcommand{\tFreq}[1]{\\ \textbf{Frequency:} & \parbox[t]{\rDescription}{#1}}
-\newcommand{\tUsers}[1]{\\ \textbf{Users:} & \parbox[t]{\rDescription}{#1}}
+\newcommand{\tStart}[1]{\textbf{Start:} & \parbox[t]{\rDescription}{#1}\\}
+\newcommand{\tEnd}[1]{\textbf{End:} & \parbox[t]{\rDescription}{#1}\\}
+\newcommand{\tFreq}[1]{\textbf{Frequency:} & \parbox[t]{\rDescription}{#1}\\}
+\newcommand{\tUsers}[1]{\textbf{Users:} & \parbox[t]{\rDescription}{#1}\\}
+\newcommand{\tID}[1]{\textbf{Requirement ID:} & \parbox[t]{\rDescription}{\trID #1}}
 
 \newenvironment{DataIntro}
 {\begin{longtable}{p{\rLabel} p{\rDescription}}}
