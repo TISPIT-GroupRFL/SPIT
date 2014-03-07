@@ -7,8 +7,8 @@
 %\tID{ID wanted}
 %\end{DataIntro}
 %--------------------------------------------------
-\newcommand{\rLabel}{0.15 \textwidth}
-\newcommand{\rDescription}{0.8\textwidth}
+\newcommand{\rLabel}{0.2 \textwidth}
+\newcommand{\rDescription}{0.75\textwidth}
 \newcommand{\rExample}[1]{\textbf{Example:} & \parbox[t]{\rDescription}{#1}\\}
 \newcommand{\rSource}[1]{ \textbf{Data source:} & \parbox[t]{\rDescription}{#1}\\}
 \newcommand{\rUse}[1]{\textbf{Data use:} & \parbox[t]{\rDescription}{#1}\\}
@@ -21,7 +21,7 @@
 \newcommand{\tID}[1]{\textbf{Requirement ID:} & \parbox[t]{\rDescription}{\trID #1}}
 
 \newenvironment{DataIntro}
-{\begin{longtable}{p{\rLabel} p{\rDescription}}}
+{\vspace{-10pt}\begin{longtable}{p{\rLabel} p{\rDescription}}}
 {\end{longtable}}
 %--------------------------------------------------
 
@@ -57,7 +57,7 @@
 \newcommand{\TCfourth}{0.08 \textwidth}
 
 \newenvironment{DataTable}
-{\begin{longtable}{ p{\TCfirst}  p{\TCsecond} p{\TCthird} p{\TCfourth} }
+{\vspace{-20pt}\begin{longtable}{ p{\TCfirst}  p{\TCsecond} p{\TCthird} p{\TCfourth} }
 \hline \multicolumn{2}{l}{\textbf{Fields and relationships}} & \textbf{Example solution} & \textbf{Code} \\ \hline}
 {\hline \end{longtable}
 \setcounter{ctStep}{0}}
@@ -82,7 +82,7 @@
 %\end{TaskTable}
 %--------------------------------------------------
 \newenvironment{TaskTable}
-{\begin{longtable}{ p{\TCfirst}  p{\TCsecond} p{\TCthird} p{\TCfourth} }
+{\vspace{-20pt}\begin{longtable}{ p{\TCfirst}  p{\TCsecond} p{\TCthird} p{\TCfourth} }
 \hline \multicolumn{2}{l}{\textbf{Subtask and variant}} & \textbf{Example solution} & \textbf{Code} \\ \hline}
 {\hline \end{longtable}
 \setcounter{ctStep}{0}}

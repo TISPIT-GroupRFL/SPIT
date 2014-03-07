@@ -13,33 +13,32 @@ The functional requirement is that the system must support a number of tasks, in
 \fboxsep0pt
 \colorbox{light-gray}{\begin{minipage}{\textwidth}
 \begin{DataIntro}
-\tStart{When the student has finished a review for an assigned handin.}
-\tEnd{When the review has been submitted. }
-\tFreq{Depends on the number of reviewers for each exercise, and frequency of exercises.}
+\tStart{When the group has finished a handin for an exercise.}
+\tEnd{When the handin has been submitted. }
+\tFreq{Atleast once per group per exercise. Depends on the frequency of the exercises.}
 \tUsers{Students}
+\tID{007}
 \end{DataIntro}
-\end{minipage}}
-\\
-%\fboxsep0pt
-\colorbox{light-gray}{\begin{minipage}{\textwidth}
+
 \begin{TaskTable}
 
-\Record{Submit review file(s) and record comment, assessment(okay/not okay) and timestamp}{}{}
-
+\Record{Submit handin and comments.}{}{}
 \RecordAddi
 {a}
-{Review has already been submitted: update review and associated data.}{}
+{Handin has already been submitted: update handin and comment.}{}
 
-\Record{Distribute review to reviewees.}{The system could distribute the handin to the reviewee when passing review deadline.}{}
+\Record{Distribute handin to reviewers.}{The system could assign reviews and distribute the handins to the reviewers when passing the deadline for submissions.}{}
 
 \RecordAddi
 {p}
-{\textbf{Problem:} Students send reviews as email to reviewees and teachers. This approach is error-prone.}{}{}
+{\textbf{Problem:} Students send handins as email to reviewers, after consulting the table of reviewers. This approach is error-prone.}{}
+
+
 \end{TaskTable}
 \end{minipage}}
 \\
 \\
-The table lists the subtasks and problems of task \ref{sec:SubmitHandin}. 
+The table lists the subtasks and problems of task TR-007. 
 There is thus a requirement to support each of the table lines to some extent. 
 The data about Start, End and Frequency are not in the table, meaning that they are not requirements.
 
