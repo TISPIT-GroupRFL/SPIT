@@ -1,0 +1,27 @@
+\documentclass[jou]{apa6}
+
+\input{Preamble}
+
+%BibLatex
+\usepackage[style=authoryear, sortcites=true, sorting=nyt, backend=biber]{biblatex} 
+\DeclareLanguageMapping{american}{american-apa} %BibLatex mapping
+\addbibresource{References.bib}
+
+\begin{document}
+\maketitle
+\subfile{Introduction}
+
+\subfile{Informal}
+\subfile{Formal}
+\subfile{Validating}
+\subfile{Comparison}
+\subfile{Concluding}
+
+
+%\parencite{Goal}
+
+
+
+
+\printbibliography
+\end{document}
