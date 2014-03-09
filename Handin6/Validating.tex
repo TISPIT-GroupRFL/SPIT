@@ -7,4 +7,84 @@
 %New content: This part shall also include a reflection over the feedback you have received and its value and consequences in your final specification (around 1/2 page).
 
 
+There are several ways to validate a specification and are very important for all parties of the specification.
+First of all, the customers uses the paper as their contract for what is to be delivered to them.
+Secondly, the managers uses the paper to estimate how long it will take to finish the system deadlines of which the customer will hold the contractor up to.
+Thirdly, the software designers need it to specify what to design and clues to how it should be done.
+Fourthly, all the requirements must be fulfilled which means the coders need to test up against it to see whether the code does what it is supposed to.
+With this in mind both the contractor and the customer will see if they can find any flaws in the specification.
+\\
+\\
+A good specification has certain key elements which must be fulfilled to call it good.
+\\
+First -- Correctness:
+In a specification there is no room for "nice to have" since the contractor won't give a bonus  feature to the customer for free.
+Everything in the specification therefor must be a requirement and have assigned to it.
+\\
+Second -- Unambiguous:
+There must not be more than one way of interpreting a requirement. 
+If there's more than one way, the contractor will pick the easy way around and this may not hold up in court.
+If a requirement can be described with numbers or formulas it is better than with words.
+\\
+Third -- Complete:
+\\
+Fourth -- consistent:
+When writing the requirements they cannot conflict with each other.
+If production starts and a conflict is found the developers will normally just ask what it should be, since minor conflicts happen.
+But if it's a big conflict the system might need to be redesigned. 
+\\
+Fifth -- Verifiable:
+Requirement can't have a "nice" user interface, since this can't be measured.
+Measuring is very important since this is what the contractor can be sued for.
+\\
+Sixth -- Modifiable:
+Writing specification should be easy but is not an essay from ground school which mean one can't just write requirements as they come to mind.
+Should one do it will be hell should something be modified.
+Therefor requirements are written in categories so editing other requirement will be easy.
+Further more it is a good idea to write static values (time of different sorts, maximum amount of elements and so forth) one place and refer to it.
+This way it will be modified for all requirements when corrected there.
+\\
+Seventh -- Traceable:
+Writing two traceability matrices is a very good idea.
+The first matrix, forward traceability, show how the user's requirement are linked to each requirement in the specification.
+If all the user's requirement are not found, something is missing.
+The second matrix, backward traceability, show how each specification requirement links back to the user's requirements.
+\\
+\\
+To make sure all of this is accomplished a few different styles can be applied.
+One is to sit down and review the paper which primarily is to clarify and accept the decisions.
+Unfortunately this does not correct that many errors. 
+Instead inspections can be performed, which goal is to find defects and prevent more from occurring.
+If a team of inspectors do not find anything it's either the perfect specification or some bad inspectors, which is why inspectors have each area of perspective for the system. 
+
+When inspecting it can be done a few ways:
+
+
+Ad-hoc Inspection:
+Here the team will primarily look for commission defects, listed above (unambiguous, inconsistent and wrong information), but also omission defect in the form of missing functionality, environment, performance and interfaces.
+
+
+Checklist based Inspection:
+Lots of requirements has been looked through for mistakes and several checklists have been made to ensure all common aspect are correct. 
+These list can be more systematic in their approach of finding issues.
+
+
+Scenario based Inspection:
+By splitting the specification up in different types of scenarios the errors can be easier to spot.
+\\
+Data type consistency makes objects of different visible, determine the information carried in the type and where the types are used with the functional requirements.
+\\
+Incorrect functionality can be found by looking at the in- and output for all functional requirements, identifying where the system events are for the function requirements and finding any invariant properties.
+\\
+Ambiguous and missing functionalities can be located when looking at the precision and response time requirements and looking at the traceability matrices for how many requirements are created for each user requirement.
+
+
+
+
+
+
+
+
+
+
 \end{document}
