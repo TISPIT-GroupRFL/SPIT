@@ -58,6 +58,8 @@
 *.out
 *.synctex.gz
 *.orig
+*.bcf
+*.run.xml
 
 *.pdf
 **/*.pdf
