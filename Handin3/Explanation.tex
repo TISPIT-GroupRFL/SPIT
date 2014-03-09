@@ -7,13 +7,73 @@
 A hotel manager wishes to upgrade the hotels key management system.
 In order to do this he would like to use key cards that can be programmed to unlock rooms in the hotel.
 
-\begin{itemize}
-
+\subsection{Requirements}
+\begin{enumerate}[R-1]
   \item At the hotel desk the manager must to be able to see all the cards that are issued to guests at any moment.
   \item The hotel system must track all keys in either issued or previously issued.
-  \item A card must have two keys, one for the previous guest and one the current guest.
   \item A guests cards for a room should work until a new guest enters the same room for the first time.
+\end{enumerate}
 
-\end{itemize}
+\subsection{Detailed descriptions}
+
+The previous keys must be a subset of all issued keys as stated by the invariant in \codeTitle \ref{lst:deskDef}.
+
+\begin{vdmsl}[label=lst:deskDef,caption=Desk definition]
+Desk :: issued : set of Key
+        prev   : map Room to Key
+inv d == rng d.prev subset d.issued;
+\end{vdmsl}
+According to the invariant of hotels in \codeTitle \ref{lst:hotelDef}, the set rooms with a previous key must be a subset of all the rooms with a lock.
+Additionally all the keys must be amongs the issued keys.
+\newpage
+\begin{vdmsl}[label=lst:hotelDef,caption=Hotel definition]
+state Hotel of
+  desk   : Desk
+  locks  : map Room to Key
+  guests : map Guest to set of Card
+inv h == dom h.desk.prev subset dom h.locks and
+  dunion {{c.fst, c.snd} | c in set dunion rng h.guests}
+  subset h.desk.issued
+\end{vdmsl}
+The precondition of the \code{CheckIn} operation in \codeTitle\ref{lst:checkinOp} dictates that a room can only be checked in if it is previously rented out. 
+
+A key for a checked in guest should be marked as issued in the system.
+
+\begin{vdmsl}[label=lst:checkinOp,caption=CheckIn operation]
+CheckIn(g:Guest,r:Room)
+ext wr desk   : Desk
+    wr guests : map Guest to set of Card
+pre r in set dom desk.prev
+
+post exists new_k:Key &
+  new_k not in set desk~.issued and
+  let new_c = mk_Card(desk~.prev(r),new_k)
+    in
+      desk.issued = desk~.issued union {new_k} and
+	    desk.prev = desk~.prev ++ {r |-> new_k} and
+	    if g in set dom guests~
+	      then guests = guests~ ++ {g |-> guests~(g) union {new_c}}
+      else
+        guests = guests~ munion {g |-> {new_c}};
+\end{vdmsl}
+The \code{Enter} operation in \codeTitle \ref{lst:enterOp} describes the action of entering a room.
+In order to gain access to a room a guest must first meet some preconditions; the guests key must match the lock of the room.
+Of the two keys on the guests keycard, one of them must fit the lock.
+When a new guest enters a room, the old guests card will no longer function.
+\newpage
+
+\begin{vdmsl}[label=lst:enterOp,caption=Enter operation]
+Enter(r:Room,g:Guest)
+ext wr locks  : map Room to Key
+    rd guests : map Guest to set of Card
+
+pre r in set dom locks and
+  g in set dom guests and
+  exists c in set guests(g) & c.fst=locks(r) or c.snd=locks(r)
+
+post exists c in set guests(g) &
+	c.fst = locks(r) and locks = locks~ ++ {r |-> c.snd} or
+	c.snd = locks(r) and locks = locks~;
+\end{vdmsl}
 
 \end{document}

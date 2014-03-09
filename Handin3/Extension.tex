@@ -5,5 +5,82 @@
 \section{Extension for request}
 
 The VDM-SL model shall be updated such that locks to a room can be opened with more than one card.
+The solution must obey the following rules:
+\begin{itemize}
+\item All cards must still be unique.
+\item The guests must be able to obtain additional cards.
+\item Guests may only obtain extra cards to rooms for which they already have at least one card.
+\end{itemize}
+This problem can be solved in many ways -- in the following a solution is explained.
+To allow more than one card to open a room, it must be possible to create at least one additional card with the same keys (first and second) as the original card corresponding to that room.
+
+\subsection{Maintaining \code{Card} uniqueness}
+
+The first step in the solution involves making sure that all cards are still unique even when carrying the same keys. This is important, because it enables the \code{Card}s to be handled using sets, additionally it allows the \code{Card}s to be tracked, should that functionality be desired. 
+This is accomplished by adding a card ID to the \code{Card} record as stated in \codeTitle \ref{lst:cardID}.
+
+\begin{vdmsl}[label=lst:cardID,caption= \code{Card} with ID ]
+Card ::	cardId 	 : CardId
+				fst 	   : Key  
+				snd 	   : Key; 
+\end{vdmsl}
+The uniqueness of all \code{Card} records is enforced by the adding the following to the invariant of the \code{Hotel} state:
+
+\begin{vdmsl}[label=lst:hotelInv,caption= Invariant added to \code{Hotel} ]
+forall c1, c2 in set {c | c in set dunion rng h.guests} & c1.cardId <> c2.cardId
+\end{vdmsl}
+To help create new, unique \code{CardId}s the following implicit operation is added:
+
+\begin{vdmsl}[label=lst:cardIDop,caption= Helper operation for unique \code{CardId}s ]
+GetNewCardId() cId:CardId
+
+ext rd guests : map Guest to set of Card
+
+post cId not in set {c.cardId | c in set dunion rng guests};
+\end{vdmsl}
+The operation listed in \codeTitle \ref{lst:cardIDop} has been added to all instances of the constructor for \code{Card} as follows:
+\\ \code{mk_Card(GetNewCardId(),-,-)}.
+
+\subsection{Adding \code{Card}s}
+
+The important part of the solution is enabling the guests to obtain a copy of a \code{Card} already possessed by the \code{Guest}. 
+The obvious solution is to copy a \code{Card}, and add it the guest's set of \code{Card}s. This can be accomplished by the operation listed in \codeTitle \ref{lst:copyOp}.
+
+\begin{vdmsl}[label=lst:copyOp,caption= Operation \code{AddCopyOfCard()} ]
+AddCopyOfCard(g:Guest,old_c:Card)
+
+ext wr guests : map Guest to set of Card 
+    
+pre g in set dom guests and 
+		old_c in set guests(g)	
+
+post let new_c = mk_Card(GetNewCardId(), old_c.fst, old_c.snd) in 
+		 new_c in set guests(g) and 
+		 guests(g) = guests~(g) union {new_c};
+\end{vdmsl}
+The precondition of \code{AddCopyOfCard()} states that the \code{Guest} \code{g} must be checked in to the \code{Hotel}, and the \code{Guest} \code{g}, must currently own the card to be copied (\code{old_c}).
+The postcondition states that a new \code{Card}, \code{new_c} must be added to the \code{guest}'s set of \code{card}s, and \code{new_c} must have a unique \code{CardId} and the same keys as \code{old_c}.
+
+The operation \code{AddCopyOfCard()} requires the {guest} to bring the {card} to be copied, and allows a {guest} to copy a {card} even if the corresponding \code{Room} has been checked into by another {guest}, thus rendering that {card} useless. 
+To remedy these shortcomings, the following operation has been added:
+
+\begin{vdmsl}[label=lst:extraOp,caption= Operation \code{AddExtraCardForRoom()} ]
+AddExtraCardForRoom(g:Guest,r:Room)
+
+ext rd desk   : Desk
+    wr guests : map Guest to set of Card
+    
+pre g in set dom guests and  
+		exists ca in set guests(g) & ca.snd = desk.prev(r)
+
+post let old_c:Card be st old_c.snd = desk.prev(r) and old_c in set guests(g) in 
+		let new_c = mk_Card(GetNewCardId(), old_c.fst, old_c.snd) in 
+		new_c in set guests(g) and 
+		guests(g) = guests~(g) union {new_c}; 
+\end{vdmsl}
+The operation listed in \codeTitle \ref{lst:extraOp} takes a \code{Guest}, \code{g}, and the \code{Room}, \code{r}, for which the guest desires an additional \code{Card}. \\ 
+The precondition states that the \code{Guest} must be checked in to the \code{Hotel}, and the must posses a \code{Card} with the key most recently checked into \code{Room r}. This means that only the \code{Room}'s current \code{Guest} can obtain an additional \code{Card} for that \code{Room}.
+\\
+The postcondition states that a new \code{Card} (\code{new_c}) must be created with a unique \code{CardId} and the same keys as the \code{Card} corresponding to \code{Room r}. This \code{Card}, \code{new_c} must be added to the \code{Guest}'s set of \code{Card}s. 
 
 \end{document}
