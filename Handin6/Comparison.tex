@@ -17,14 +17,12 @@ The paper explained a second way of dealing with user's needs and why this appro
 The main argument of this article was, that using this method can save a lot of time and according to another article, \parencite[]{Task2}, a quick survey showed that 45 \% of asked teams used this (or similar methods) in 2012 which only underlines, that this is a growing way of addressing customers' needs today.
 \\
 \\
-\textit{Why is Tasks better than the traditional approach?}
-\\
-Doing things faster is normally a good way to take, assuming the outcome is as good as the slower approach.
+Assuming the claims made in Søren Lauesen's idea of Task-Description \parencite[]{Task} is true -- doing things faster is normally a good thing, assuming the outcome is as good as the slower approach.
 But it is not only a matter of speed -- it is a matter of understanding what is to be done in the specification.
 
 In the traditional view, use cases are created.
-They state who interact with the system (hardware and software), what will happen step by step, what is needed for the software to run and what the outcome will be.
-This is not a bad way of during it, but as a customer you are left behind thinking what all the fancy terms mean and can only hope the solution will work.
+They state who interact with the system (hardware and software), pre- and postconditions, what scenarios will happen step by step, each step specifying which actor performs the step.
+This approach is great for specifying scenarios fitting that pattern. However, such a description may not be easily understandable by the customer  if the task to be performed does not map well to use cases. 
 
 In the Task-description approach the use cases are replaced by tasks the customer can understand from the customer's daily routines.
 This could be \textit{check a hotel guest in to the system} and then describe what the customer already know, step by step, with small subtasks.
@@ -32,11 +30,15 @@ Now the customer can read and understand what is to become with the task, what h
 How it should be executed is not specified yet.
 With the same example it could be a guest coming to the counter asking an employee to check in the guest or it could be a small screen with clear instructions the guest could check him self in with.
 The outcome would be exactly the same -- only the execution would be different.
-And this is where the time is saved making the specification.
-
+\\
+\\
 If the contractor doesn't need to sit with a team of software engineers and almost design the system before it is approved, the contractor can just write what the customer wants, specify step by step of each task, let the customer approve it and then sit down with the engineers to design the system.
+
+Because of how 
+
 Imagine the engineers thought A let to B to C, creates some use cases from their understanding of the system based on how they what to implement it. 
-Then the customer say A only leads to C, and B is another part of the wanted solution. 
+Then the customer say A only leads to C, and B is another part of the wanted solution.
+
 Now the use cases has to be rewritten.
 And this is only if the customer catches the error in time. 
 If the implementation is halfway through and the customer finally understand, that this is an error, it could take months or years to redesign and reimplement, maybe with a lawsuit of delayed delivery too.
@@ -51,7 +53,15 @@ Making a subtask for a use case is only letting the software make a decision and
 A task, on the other hand, will specify what the user \textit{and} the system should accomplise together.
 This can be challenging to get used to for engineers who only have worked with  the traditional way of writing secifications.
 But it cannot be stressed enough, that the two methods cannot be used together.
+\\ 
+\\
+task based:
+- lettere at læse for costumer
+- forklarer nuværende problem
+- lægger ikke opgaveansvar på enten system eller bruger
+\\
 
+noget med formelle methods
 
 
 
