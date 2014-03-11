@@ -5,7 +5,6 @@
 \section{Comparison of specification techniques}
 %This part shall contain a comparison of pros and cons with different specification techniques and a reflection of your own experience in using different kinds of techniques (around 2 pages).
 
-
 When writing specifications, different techniques can be used.
 In the bachelor degree of this education the traditional standard of making use cases has been used and favored over all else.
 It has worked nicely for multiple projects and each time has been a new challenge with new obtained knowledge of how to create a better specifications.
@@ -29,47 +28,20 @@ This could be \textit{check a hotel guest in to the system} and then describe wh
 Now the customer can read and understand what is to become with the task, what he is paying for and the task will be completed.
 How it should be executed is not specified yet.
 With the same example it could be a guest coming to the counter asking an employee to check in the guest or it could be a small screen with clear instructions the guest could check him self in with.
-The outcome would be exactly the same -- only the execution would be different.
+The outcome would be exactly the same -- only the execution would be different. Task descriptions also allow for the customers current problem to be stated along with the relevant task, thus making the context more understandable for a supplier.
 \\
 \\
-If the contractor doesn't need to sit with a team of software engineers and almost design the system before it is approved, the contractor can just write what the customer wants, specify step by step of each task, let the customer approve it and then sit down with the engineers to design the system.
+If the contractor doesn't need to sit with a team of software engineers and almost design the system before it is approved, the contractor can just write what the customer wants, specify step by step of each task, let the customer approve it and then sit down with the engineers to design the system, thus saving time and money.
 
-Because of how 
+Tasks will specify what the user \textit{and} the system should accomplish together.
+This can be challenging to get used to for engineers who only have worked with the traditional way of writing specifications.
 
-Imagine the engineers thought A let to B to C, creates some use cases from their understanding of the system based on how they what to implement it. 
-Then the customer say A only leads to C, and B is another part of the wanted solution.
-
-Now the use cases has to be rewritten.
-And this is only if the customer catches the error in time. 
-If the implementation is halfway through and the customer finally understand, that this is an error, it could take months or years to redesign and reimplement, maybe with a lawsuit of delayed delivery too.
+Task-descriptions map closely to every task performed by the user. This means that task-descriptions are more likely to be correct than use case descriptions. This allows defects to be detected earlier in the process.
 \\
 \\
-\textit{So it is faster and more reliable -- How about giving use cases subtask?}
-\\
-This would not work.
-The main reason is, a use case is the system (software and hardware) performing something for the user(s)/actor(s).
-Making a subtask for a use case is only letting the software make a decision and not the user.
+To support the informal specification methods like use cases and task descriptions, formal methods provide means for specifying and analysing systems using mathematical entities and concepts. While informal methods provide context for the reader, and generally more readable specifications, the formal methods offer precise and unambiguous methods to describe a system. Using formal methods does not ensure the completeness of a system, furthermore, using formal methods for trivial systems will most likely not result an advantage over informal methods. 
 
-A task, on the other hand, will specify what the user \textit{and} the system should accomplise together.
-This can be challenging to get used to for engineers who only have worked with  the traditional way of writing secifications.
-But it cannot be stressed enough, that the two methods cannot be used together.
-\\ 
-\\
-task based:
-- lettere at læse for costumer
-- forklarer nuværende problem
-- lægger ikke opgaveansvar på enten system eller bruger
-\\
-
-noget med formelle methods
-
-
-
-
-
-
-
-
+Using most formal methods requires mathematical knowledge, thus resulting in a steeper learning curve, which was also the case with the formal specification language VDM-SL used in this course during handin 3 \parencite[]{HI3}. This means that formal methods are of limited use when discussing requirements with customers, however modelling essential parts of a system allows certain system properties to be verified. Using a formal method provides an unambiguous and consistent way to convey requirements, which does not exist when relying on natural language as informal methods do.
 
 
 
