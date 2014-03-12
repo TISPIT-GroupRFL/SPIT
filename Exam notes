@@ -1,0 +1,51 @@
+1. Contents of a good specification
+
+- Check that all parts match and everything is included
+- Validate that stakeholders are happy (customer, user, developer)
+- Where are the major risks?
+- Quality product = meeting the spec?
+
+- Write down business goals!
+- Understandable for the customer
+	- Word != meaning
+	- Meaning != consequences for business
+	- Show similar system/ pilot test.
+
+- Correct: was that customer's actual need
+- Unambiguous: Misunderstood
+- Complete: Get all Non-trivial requirements written (Also get GUI in Task and Support)
+- Consistent: No conflicts
+- Verifiable: A "nice" user interface, isn't measurable.
+- Modifiable: Categorize, prioritize and static labels in SRS
+- Traceable: Forward and backward
+
+- Describe data (Do CRUDO check on tasks vs. )
+- Quality (performance, security, reliability, availability, interoperability, usability)
+- ID on req.
+- Risk assessment
+- Tests
+- Run through check list
+
+
+2. Discuss pros and cons with informal specification
+
+
+3. Discuss pros and cons with formal specification
+
+
+4. Relationships between assumptions, specifications and system properties
+
+
+5. Compare different specification techniques
+
+
+6. Reviewing and validating a specification
+
+
+7. The tendering process using specifications
+
+
+8. Requirements elicitation
+
+
+9. Formal VDM-SL specifications
